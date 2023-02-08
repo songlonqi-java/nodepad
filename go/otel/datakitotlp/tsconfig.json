@@ -1,0 +1,16 @@
+{
+  "grpc": true,
+  "grpc_addr": "10.100.64.100:4317",
+
+  "http": false,
+  "http_endpoint": "127.0.0.1:9529",
+  "http_addr": "/otel/v1/trace",
+
+  "server_name": "testServerName",
+  "trace_name": "trace123",
+  "count": 10,
+  "tags": {
+    "labelA": "chocolate",
+    "labelC": "chocolate"
+  }
+}
