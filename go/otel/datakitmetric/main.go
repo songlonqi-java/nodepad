@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric/instrument"
-	"go.opentelemetry.io/otel/metric/unit"
 	"log"
 	"time"
 
@@ -19,11 +18,10 @@ import (
 func main() {
 	metricSd := initMetric()
 	defer metricSd()
-	userMeter := global.Meter("metricName_user_login")
 	// 统计 每5秒 收到的用户请求数量以及成功失败的数量
-	for i := 0; i < 10; i++ {
-
-		ctx, _ := context.WithTimeout(context.Background(), time.Second*2)
+	for i := 0; i < 5; i++ {
+		userMeter := global.Meter("metricName_user_login")
+		ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
 
 		//loginCount := metric.Must(userMeter).NewInt64Counter("user_login_five_second") // 计数器 递增
 		//count := rand.Int63n(10)
@@ -35,49 +33,63 @@ func main() {
 		//	attribute.Key("A").String("B"),
 		//	attribute.Key("C").String("D"),
 		//}
-		counter, err := userMeter.Float64Counter("user_login", instrument.WithDescription("a simple counter"))
+		counter, err := userMeter.Float64Counter("user.login", instrument.WithDescription("a simple counter"))
 		if err != nil {
 			log.Fatal(err)
 		}
-		counter.Add(ctx, 5, attribute.String("A", "B"), attribute.String("B", "b"))
-		counter.Add(ctx, 6, attribute.String("A", "C"))
-		counter.Add(ctx, 7, attribute.String("A", "D"))
-
-		_, err = userMeter.Int64ObservableGauge(
-			"DiskUsage",
-			instrument.WithUnit(unit.Bytes),
-			instrument.WithInt64Callback(func(_ context.Context, obsrv instrument.Int64Observer) error {
-				// Do the real work here to get the real disk usage. For example,
-				//
-				//   usage, err := GetDiskUsage(diskID)
-				//   if err != nil {
-				//   	if retryable(err) {
-				//   		// Retry the usage measurement.
-				//   	} else {
-				//   		return err
-				//   	}
-				//   }
-				//
-				// For demonstration purpose, a static value is used here.
-				usage := 7 + i
-				obsrv.Observe(int64(usage), attribute.Int("disk.id", i))
-				return nil
-			}),
-		)
-		if err != nil {
-			fmt.Println("failed to register instrument")
-			panic(err)
-		}
-
-		histogram, err := userMeter.Float64Histogram("baz", instrument.WithDescription("a very nice histogram"))
+		badCounet, err := userMeter.Int64Counter("user.login.bad", instrument.WithDescription("user login fatal"))
 		if err != nil {
 			log.Fatal(err)
 		}
-		histogram.Record(ctx, 23, attribute.String("AH", "B"), attribute.String("B", "b"))
-		histogram.Record(ctx, 7, attribute.String("AH", "C"))
-		histogram.Record(ctx, 101, attribute.String("AH", "D"))
-		histogram.Record(ctx, 105, attribute.String("AH", "E"))
-		time.Sleep(time.Second * 5)
+
+		if i%2 == 0 {
+			counter.Add(ctx, 5, attribute.String("A.a", "B"), attribute.String("B", "b"))
+			badCounet.Add(ctx, 5, attribute.String("A.a", "B"), attribute.String("B", "b"))
+
+		} else {
+			counter.Add(ctx, 6, attribute.String("A.a", "C"))
+			badCounet.Add(ctx, 6, attribute.String("A.a", "C"))
+		}
+
+		/*		_, err = userMeter.Int64ObservableGauge(
+					"DiskUsage",
+					instrument.WithUnit(unit.Bytes),
+					instrument.WithInt64Callback(func(_ context.Context, obsrv instrument.Int64Observer) error {
+						// Do the real work here to get the real disk usage. For example,
+						//
+						//   usage, err := GetDiskUsage(diskID)
+						//   if err != nil {
+						//   	if retryable(err) {
+						//   		// Retry the usage measurement.
+						//   	} else {
+						//   		return err
+						//   	}
+						//   }
+						//
+						// For demonstration purpose, a static value is used here.
+						usage := 7 + i
+						obsrv.Observe(int64(usage), attribute.Int("disk.id", i))
+						return nil
+					}),
+				)
+				if err != nil {
+					fmt.Println("failed to register instrument")
+					panic(err)
+				}*/
+
+		/*
+			histogram, err := userMeter.Float64Histogram("baz", instrument.WithDescription("a very nice histogram"))
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			histogram.Record(ctx, 23, attribute.String("AH", "B"), attribute.String("B", "b"))
+			histogram.Record(ctx, 7, attribute.String("AH", "C"))
+			histogram.Record(ctx, 101, attribute.String("AH", "D"))
+			histogram.Record(ctx, 105, attribute.String("AH", "E"))
+		*/
+		cancel()
+		time.Sleep(time.Second * 2)
 		fmt.Println(time.Now().String())
 		//	loginFail := metric.Must(userMeter).NewInt64Histogram("user_login_fail")
 		//	loginFail.Record(ctx, rand.Int63n(3))
