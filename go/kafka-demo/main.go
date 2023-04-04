@@ -5,20 +5,23 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/GuanceCloud/cliutils/logger"
-	"github.com/Shopify/sarama"
 	"io"
 	"math/rand"
 	"os"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/GuanceCloud/cliutils/logger"
+	"github.com/Shopify/sarama"
 )
 
 var (
 	log       = logger.DefaultSLogger("kafkamq_custom")
 	kafkaAddr string
 	topics    string
+	user      string
+	pw        string
 	stop      = make(chan os.Signal, 1)
 )
 
@@ -27,10 +30,30 @@ func main() {
 
 	flag.StringVar(&kafkaAddr, "kafkaAddrs", "", "kafka addrs 10.300.14.1:9092,10.200.14.2:9092")
 	flag.StringVar(&topics, "topics", "", "topic,topic2,topic3")
+	flag.StringVar(&user, "user", "", "username")
+	flag.StringVar(&pw, "pw", "", "pw")
 	flag.Parse()
 	if kafkaAddr == "" || topics == "" {
 		fmt.Println("kafkaAddrs is nil  or  topics is nil")
 		return
+	}
+	config := sarama.NewConfig()
+	config.Consumer.Return.Errors = false
+	config.Version = sarama.V2_1_1_0                      // specify appropriate version
+	config.Consumer.Offsets.Initial = sarama.OffsetOldest // 未找到组消费位移的时候从哪边开始消费
+
+	config.Consumer.Group.Rebalance.GroupStrategies = []sarama.BalanceStrategy{sarama.BalanceStrategyRoundRobin, sarama.BalanceStrategyRange}
+	config.Consumer.Offsets.Retry.Max = 10
+	name, _ := os.Hostname()
+	config.ClientID = name
+
+	if user != "" || pw != "" {
+		fmt.Printf("user=%s pw=%s \n", user, pw)
+		config.Net.SASL.Enable = true
+		config.Net.SASL.Version = sarama.SASLHandshakeV1
+		config.Net.SASL.Password = pw
+		config.Net.SASL.User = user
+		config.Net.SASL.Mechanism = sarama.SASLTypePlaintext
 	}
 	file, err := os.OpenFile("./topic.msg", os.O_CREATE|os.O_RDWR|os.O_APPEND, 0755)
 	if err != nil {
@@ -44,7 +67,7 @@ func main() {
 		output:  file,
 	}
 	addrs := strings.Split(kafkaAddr, ",")
-	custom.SaramaConsumerGroup(addrs)
+	custom.SaramaConsumerGroup(addrs, config)
 	file.Close()
 }
 
@@ -54,19 +77,20 @@ type Custom struct {
 	output  io.WriteCloser
 }
 
-func (c *Custom) SaramaConsumerGroup(addrs []string) {
-	config := sarama.NewConfig()
-	config.Consumer.Return.Errors = false
-	config.Version = sarama.V2_1_1_0                      // specify appropriate version
-	config.Consumer.Offsets.Initial = sarama.OffsetOldest // 未找到组消费位移的时候从哪边开始消费
+func (c *Custom) Print(v ...interface{}) {
+	log.Debug(v)
+}
 
-	config.Consumer.Group.Rebalance.Strategy = sarama.BalanceStrategyRoundRobin
-	config.Consumer.Offsets.Retry.Max = 10
-	name, _ := os.Hostname()
-	config.ClientID = name
+func (c *Custom) Printf(format string, v ...interface{}) {
+	log.Debugf(format, v)
+}
 
+func (c *Custom) Println(v ...interface{}) {
+	log.Debug(v)
+}
+func (c *Custom) SaramaConsumerGroup(addrs []string, config *sarama.Config) {
 	log = logger.SLogger("kafkamq_custom")
-
+	sarama.Logger = c
 	c.stop = make(chan struct{}, 1)
 	var group sarama.ConsumerGroup
 	var err error
@@ -211,7 +235,7 @@ func (c *consumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession,
 }
 
 func (c *consumerGroupHandler) feedMsg(msg *sarama.ConsumerMessage) {
-	c.output.Write([]byte(fmt.Sprintf("topic=%s", msg.Topic)))
+	c.output.Write([]byte(fmt.Sprintf("topic=%s |", msg.Topic)))
 	c.output.Write(msg.Value)
 	c.output.Write([]byte("\n"))
 }
