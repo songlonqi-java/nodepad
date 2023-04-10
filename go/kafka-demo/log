@@ -1,499 +1,105 @@
-2023-03-31T11:12:07.653+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-03-31T11:12:07.653+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T16:59:02.837+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[Initializing new client]
+2023-04-04T16:59:02.838+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
 
-2023-03-31T11:12:07.653+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T16:59:18.873+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Connected to broker at [10.200.6.16:9092] (unregistered)
 
-2023-03-31T11:12:07.653+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634393696] while fetching metadata: %!v(MISSING)
+2023-04-04T16:59:18.874+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata got error from broker [-1 824634220864] while fetching metadata: %!v(MISSING)
 
-2023-03-31T11:12:07.653+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:07.653+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:07.903+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
+2023-04-04T16:59:18.874+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Closed connection to broker [10.200.6.16:9092]
 
-2023-03-31T11:12:07.903+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T16:59:18.874+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[client/metadata no available broker to send metadata request to]
+2023-04-04T16:59:18.874+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/brokers resurrecting [1] dead seed brokers
+2023-04-04T16:59:19.125+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
 
-2023-03-31T11:12:07.904+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T16:59:19.125+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
 
-2023-03-31T11:12:07.904+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635834368] while fetching metadata: %!v(MISSING)
+2023-04-04T16:59:27.137+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Connected to broker at [10.200.6.16:9092] (unregistered)
 
-2023-03-31T11:12:07.904+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:07.904+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:08.154+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
+2023-04-04T16:59:27.138+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata got error from broker [-1 824634220864] while fetching metadata: %!v(MISSING)
 
-2023-03-31T11:12:08.154+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T16:59:27.138+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Closed connection to broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.154+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T16:59:27.138+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[client/metadata no available broker to send metadata request to]
+2023-04-04T16:59:27.138+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/brokers resurrecting [1] dead seed brokers
+2023-04-04T16:59:27.388+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
 
-2023-03-31T11:12:08.154+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634394016] while fetching metadata: %!v(MISSING)
+2023-04-04T16:59:27.388+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.154+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:08.155+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
+2023-04-04T16:59:35.401+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Connected to broker at [10.200.6.16:9092] (unregistered)
 
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T16:59:35.401+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata got error from broker [-1 824634220864] while fetching metadata: %!v(MISSING)
 
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T16:59:35.402+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Closed connection to broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634974208] while fetching metadata: %!v(MISSING)
+2023-04-04T16:59:35.402+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[client/metadata no available broker to send metadata request to]
+2023-04-04T16:59:35.402+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/brokers resurrecting [1] dead seed brokers
+2023-04-04T16:59:35.652+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
 
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-03-31T11:12:08.405+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T16:59:35.652+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.406+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T16:59:43.666+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Connected to broker at [10.200.6.16:9092] (unregistered)
 
-2023-03-31T11:12:08.406+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T16:59:43.667+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata got error from broker [-1 824634220864] while fetching metadata: %!v(MISSING)
 
-2023-03-31T11:12:08.406+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634974448] while fetching metadata: %!v(MISSING)
+2023-04-04T16:59:43.667+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Closed connection to broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.406+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:08.406+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:08.656+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
+2023-04-04T16:59:43.667+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[client/metadata no available broker to send metadata request to]
+2023-04-04T16:59:43.667+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/brokers resurrecting [1] dead seed brokers
+2023-04-04T16:59:43.667+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[Closing Client]
+2023-04-04T16:59:43.667+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[Initializing new client]
+2023-04-04T16:59:43.667+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.656+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T16:59:59.694+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Error while performing SASL Auth [10.200.6.16:9092]
 
-2023-03-31T11:12:08.656+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T16:59:59.694+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Closed connection to broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.656+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T16:59:59.694+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
 
-2023-03-31T11:12:08.656+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634394256] while fetching metadata: %!v(MISSING)
+2023-04-04T16:59:59.694+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata got error from broker [-1 824634220864] while fetching metadata: %!v(MISSING)
 
-2023-03-31T11:12:08.656+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:08.656+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:08.907+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
+2023-04-04T16:59:59.694+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[client/metadata no available broker to send metadata request to]
+2023-04-04T16:59:59.694+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/brokers resurrecting [1] dead seed brokers
+2023-04-04T16:59:59.944+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
 
-2023-03-31T11:12:08.907+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T16:59:59.945+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.907+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T17:00:07.958+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Error while performing SASL Auth [10.200.6.16:9092]
 
-2023-03-31T11:12:08.907+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T17:00:07.958+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Closed connection to broker [10.200.6.16:9092]
 
-2023-03-31T11:12:08.907+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634974688] while fetching metadata: %!v(MISSING)
+2023-04-04T17:00:07.958+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
 
-2023-03-31T11:12:08.907+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:08.907+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:09.157+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
+2023-04-04T17:00:07.958+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata got error from broker [-1 824634220864] while fetching metadata: %!v(MISSING)
 
-2023-03-31T11:12:09.157+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T17:00:07.958+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[client/metadata no available broker to send metadata request to]
+2023-04-04T17:00:07.958+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/brokers resurrecting [1] dead seed brokers
+2023-04-04T17:00:08.209+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
 
-2023-03-31T11:12:09.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T17:00:08.209+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
 
-2023-03-31T11:12:09.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T17:00:16.224+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Error while performing SASL Auth [10.200.6.16:9092]
 
-2023-03-31T11:12:09.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634974928] while fetching metadata: %!v(MISSING)
+2023-04-04T17:00:16.224+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Closed connection to broker [10.200.6.16:9092]
 
-2023-03-31T11:12:09.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:09.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:09.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-03-31T11:12:09.158+0800	ERROR	kafkamq_custom	kafka-demo/main.go:185	new group is err,restart count=52 ,addrs=[[127.0.0.1:9092]] err=kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused
-2023-03-31T11:12:19.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-03-31T11:12:19.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T17:00:16.224+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
 
-2023-03-31T11:12:19.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T17:00:16.224+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata got error from broker [-1 824634220864] while fetching metadata: %!v(MISSING)
 
-2023-03-31T11:12:19.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T17:00:16.224+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[client/metadata no available broker to send metadata request to]
+2023-04-04T17:00:16.224+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/brokers resurrecting [1] dead seed brokers
+2023-04-04T17:00:16.474+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
 
-2023-03-31T11:12:19.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635834928] while fetching metadata: %!v(MISSING)
+2023-04-04T17:00:16.474+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
 
-2023-03-31T11:12:19.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:19.158+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:19.409+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
+2023-04-04T17:00:24.487+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Error while performing SASL Auth [10.200.6.16:9092]
 
-2023-03-31T11:12:19.409+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
+2023-04-04T17:00:24.487+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Closed connection to broker [10.200.6.16:9092]
 
-2023-03-31T11:12:19.409+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T17:00:24.487+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
 
-2023-03-31T11:12:19.417+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
+2023-04-04T17:00:24.487+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/metadata got error from broker [-1 824634220864] while fetching metadata: %!v(MISSING)
 
-2023-03-31T11:12:19.417+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824636866560] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:19.417+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:19.417+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:19.668+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:19.668+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:19.668+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:19.668+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:19.668+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634975248] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:19.668+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:19.668+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:19.918+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:19.918+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:19.918+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:19.918+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:19.918+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824636866640] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:19.918+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:19.918+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:19.918+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-03-31T11:12:19.918+0800	ERROR	kafkamq_custom	kafka-demo/main.go:185	new group is err,restart count=51 ,addrs=[[127.0.0.1:9092]] err=kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused
-2023-03-31T11:12:29.920+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-03-31T11:12:29.920+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:29.920+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:29.921+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:29.921+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634975488] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:29.921+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:29.921+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:30.171+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:30.171+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:30.171+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:30.171+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:30.171+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634975728] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:30.171+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:30.171+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:30.422+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:30.422+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:30.422+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:30.422+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:30.422+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635835248] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:30.422+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:30.422+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:30.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:30.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:30.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:30.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:30.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634975968] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:30.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:30.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:30.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-03-31T11:12:30.673+0800	ERROR	kafkamq_custom	kafka-demo/main.go:185	new group is err,restart count=50 ,addrs=[[127.0.0.1:9092]] err=kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused
-2023-03-31T11:12:40.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-03-31T11:12:40.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:40.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:40.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:40.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824636866880] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:40.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:40.673+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:40.924+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:40.924+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:40.924+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:40.924+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:40.924+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824636867120] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:40.924+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:40.924+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:41.175+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:41.175+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:41.175+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:41.175+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:41.175+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635835488] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:41.175+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:41.175+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:41.425+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:41.425+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:41.426+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:41.426+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:41.426+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635835728] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:41.426+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:41.426+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:41.426+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-03-31T11:12:41.426+0800	ERROR	kafkamq_custom	kafka-demo/main.go:185	new group is err,restart count=49 ,addrs=[[127.0.0.1:9092]] err=kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused
-2023-03-31T11:12:51.429+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-03-31T11:12:51.429+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:51.429+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:51.429+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:51.429+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635835888] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:51.429+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:51.429+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:51.680+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:51.680+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:51.680+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:51.680+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:51.680+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824636867440] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:51.680+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:51.680+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:51.930+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:51.930+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:51.930+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:51.930+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:51.930+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635836208] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:51.930+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:51.930+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:52.181+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:12:52.181+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:12:52.181+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:52.181+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:12:52.181+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824636867680] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:12:52.181+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:12:52.181+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:12:52.181+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-03-31T11:12:52.181+0800	ERROR	kafkamq_custom	kafka-demo/main.go:185	new group is err,restart count=48 ,addrs=[[127.0.0.1:9092]] err=kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused
-2023-03-31T11:13:02.185+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-03-31T11:13:02.185+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:13:02.185+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:13:02.185+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:13:02.185+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824636867760] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:13:02.185+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:13:02.185+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:13:02.435+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:13:02.436+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:13:02.436+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:13:02.436+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:13:02.436+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634976208] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:13:02.436+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:13:02.436+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:13:02.686+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:13:02.686+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:13:02.687+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:13:02.687+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:13:02.687+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634976448] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:13:02.687+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:13:02.687+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:13:02.937+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
-
-2023-03-31T11:13:02.937+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [127.0.0.1:9092]
-
-2023-03-31T11:13:02.937+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Failed to connect to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:13:02.937+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [127.0.0.1:9092 dial tcp 127.0.0.1:9092: connect: connection refused]: %!s(MISSING)
-
-2023-03-31T11:13:02.937+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824634976688] while fetching metadata: %!v(MISSING)
-
-2023-03-31T11:13:02.937+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-03-31T11:13:02.937+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-03-31T11:13:02.937+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-03-31T11:13:02.937+0800	ERROR	kafkamq_custom	kafka-demo/main.go:185	new group is err,restart count=47 ,addrs=[[127.0.0.1:9092]] err=kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused
-2023-04-04T15:37:28.365+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-04-04T15:37:28.366+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:37:44.391+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Connected to broker at [10.200.6.16:9092] (unregistered)
-
-2023-04-04T15:37:44.395+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:37:44.395+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:37:44.395+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:37:44.395+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:37:44.645+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:37:44.645+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:37:52.656+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Connected to broker at [10.200.6.16:9092] (unregistered)
-
-2023-04-04T15:37:52.657+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:37:52.657+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:37:52.657+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:37:52.657+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:37:52.908+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:37:52.908+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:38:00.927+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Connected to broker at [10.200.6.16:9092] (unregistered)
-
-2023-04-04T15:38:00.928+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:38:00.928+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:38:00.928+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:38:00.928+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:38:01.178+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:38:01.178+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:38:09.191+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Connected to broker at [10.200.6.16:9092] (unregistered)
-
-2023-04-04T15:38:09.192+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:38:09.193+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:38:09.193+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:38:09.193+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:38:09.193+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-04-04T15:38:09.193+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-04-04T15:38:09.193+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:38:31.230+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while performing SASL Auth [10.200.6.16:9092]
-
-2023-04-04T15:38:31.230+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:38:31.230+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
-
-2023-04-04T15:38:31.230+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:38:31.230+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:38:31.230+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:38:31.480+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:38:31.480+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:38:39.494+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while performing SASL Auth [10.200.6.16:9092]
-
-2023-04-04T15:38:39.494+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:38:39.494+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
-
-2023-04-04T15:38:39.494+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:38:39.494+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:38:39.494+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:38:39.744+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:38:39.744+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:38:47.758+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while performing SASL Auth [10.200.6.16:9092]
-
-2023-04-04T15:38:47.758+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:38:47.758+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
-
-2023-04-04T15:38:47.758+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:38:47.758+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:38:47.758+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:38:48.008+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:38:48.009+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:38:56.021+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while performing SASL Auth [10.200.6.16:9092]
-
-2023-04-04T15:38:56.021+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:38:56.021+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
-
-2023-04-04T15:38:56.021+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:38:56.021+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:38:56.021+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:38:56.021+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-04-04T15:38:56.021+0800	ERROR	kafkamq_custom	kafka-demo/main.go:185	new group is err,restart count=52 ,addrs=[[10.200.6.16:9092]] err=kafka: client has run out of available brokers to talk to: EOF
-2023-04-04T15:39:06.023+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-04-04T15:39:06.023+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:39:14.272+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while performing SASL Auth [10.200.6.16:9092]
-
-2023-04-04T15:39:14.272+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:39:14.272+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
-
-2023-04-04T15:39:14.272+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:39:14.272+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:39:14.272+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:39:14.522+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 3]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:39:14.522+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:39:22.535+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while performing SASL Auth [10.200.6.16:9092]
-
-2023-04-04T15:39:22.535+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:39:22.535+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
-
-2023-04-04T15:39:22.535+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:39:22.535+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:39:22.535+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:39:22.786+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 2]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:39:22.786+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:39:30.799+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while performing SASL Auth [10.200.6.16:9092]
-
-2023-04-04T15:39:30.799+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:39:30.799+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
-
-2023-04-04T15:39:30.799+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:39:30.799+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:39:30.799+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:39:31.049+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata retrying after [250 1]ms... (%!d(MISSING) attempts remaining)
-
-2023-04-04T15:39:31.049+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
-2023-04-04T15:39:39.062+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while performing SASL Auth [10.200.6.16:9092]
-
-2023-04-04T15:39:39.062+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Closed connection to broker [10.200.6.16:9092]
-
-2023-04-04T15:39:39.062+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	Error while sending ApiVersionsRequest to broker [10.200.6.16:9092 EOF]: %!s(MISSING)
-
-2023-04-04T15:39:39.062+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata got error from broker [-1 824635367696] while fetching metadata: %!v(MISSING)
-
-2023-04-04T15:39:39.062+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[client/metadata no available broker to send metadata request to]
-2023-04-04T15:39:39.062+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/brokers resurrecting [1] dead seed brokers
-2023-04-04T15:39:39.062+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Closing Client]
-2023-04-04T15:39:39.062+0800	ERROR	kafkamq_custom	kafka-demo/main.go:185	new group is err,restart count=51 ,addrs=[[10.200.6.16:9092]] err=kafka: client has run out of available brokers to talk to: EOF
-2023-04-04T15:39:49.063+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:89	[Initializing new client]
-2023-04-04T15:39:49.063+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:85	client/metadata fetching metadata for all topics from broker [10.200.6.16:9092]
-
+2023-04-04T17:00:24.487+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[client/metadata no available broker to send metadata request to]
+2023-04-04T17:00:24.487+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:91	client/brokers resurrecting [1] dead seed brokers
+2023-04-04T17:00:24.487+0800	DEBUG	kafkamq_custom	kafka-demo/main.go:95	[Closing Client]
+2023-04-04T17:00:24.487+0800	ERROR	kafkamq_custom	kafka-demo/main.go:191	new group is err,restart count=52 ,addrs=[[10.200.6.16:9092]] err=kafka: client has run out of available brokers to talk to: EOF

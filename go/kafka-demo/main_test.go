@@ -47,7 +47,70 @@ func TestCustom_SaramaConsumerGroup(t *testing.T) {
 
 func TestCustom_NoSASL(t *testing.T) {
 
-	msgstr := `[{"a":"b","message":"this is msg"},{"a":"b","message":"this is msg"}]`
+	msgstr := `[{
+	"@timestamp": "2023-03-26T17:17:09.416Z",
+	"@metadata": {
+		"beat": "filebeat",
+		"type": "doc",
+		"version": "6.1.1",
+		"topic": "logstash-test"
+	},
+	"fields": {
+		"module": "hw-nacos",
+		"productline": "nacos",
+		"env": "uat"
+	},
+	"k8s_pod_namespace": "nacos",
+	"index": "logstash-test",
+	"source": "/host/home/logs/core-auth.log",
+	"offset": 54135810,
+	"prospector": {
+		"type": "log"
+	},
+	"k8s_pod": "nacos-0",
+	"k8s_node_name": "10.136.130.104",
+	"beat": {
+		"hostname": "log-pilot-tprrp",
+		"version": "6.1.1",
+		"name": "log-pilot-tprrp"
+	},
+	"message": "2023-03-27 01:17:08,969 DEBUG auth start, request: GET /nacos/v1/ns/instance/list\n",
+	"docker_container": "k8s_k8snacos_nacos-0_nacos_b8d95fe8-9788-4834-9fc6-2225f522acf7_0",
+	"topic": "logstash-test",
+	"k8s_container_name": "k8snacos"
+},
+{
+	"@timestamp": "2023-03-26T17:17:09.416Z",
+	"@metadata": {
+		"beat": "filebeat",
+		"type": "doc",
+		"version": "6.1.1",
+		"topic": "logstash-test"
+	},
+	"fields": {
+		"module": "hw-nacos",
+		"productline": "nacos",
+		"env": "uat"
+	},
+	"k8s_pod_namespace": "nacos",
+	"index": "logstash-test",
+	"source": "/host/home/logs/core-auth.log",
+	"offset": 54135810,
+	"prospector": {
+		"type": "log"
+	},
+	"k8s_pod": "nacos-0",
+	"k8s_node_name": "10.136.130.104",
+	"beat": {
+		"hostname": "log-pilot-tprrp",
+		"version": "6.1.1",
+		"name": "log-pilot-tprrp"
+	},
+	"message": "2023-03-27 01:17:08,969 DEBUG auth start, request: GET /nacos/v1/ns/instance/list\n",
+	"docker_container": "k8s_k8snacos_nacos-0_nacos_b8d95fe8-9788-4834-9fc6-2225f522acf7_0",
+	"topic": "logstash-test",
+	"k8s_container_name": "k8snacos"
+}]`
 
 	is := make([]interface{}, 0)
 	err := json.Unmarshal([]byte(msgstr), &is)
@@ -64,7 +127,7 @@ func TestCustom_NoSASL(t *testing.T) {
 		t.Log(string(bts))
 	}
 	// Set up Kafka connection.
-	topic := "apm"
+	topic := "apm-02"
 	brokerAddr := []string{"10.200.14.226:9092"}
 
 	config := sarama.NewConfig()

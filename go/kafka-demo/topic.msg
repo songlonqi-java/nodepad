@@ -1,9 +1,0 @@
-topic=test_topichello world
-topic=test_topichello world
-topic=test_topichello world
-topic=test_topichello world
-topic=test_topichello world
-topic=test_topichello world
-topic=test_topichello world
-topic=test_topichello world
-topic=test_topichello world

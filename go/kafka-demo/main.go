@@ -38,22 +38,28 @@ func main() {
 		return
 	}
 	config := sarama.NewConfig()
-	config.Consumer.Return.Errors = false
+	config.Consumer.Return.Errors = true
 	config.Version = sarama.V2_1_1_0                      // specify appropriate version
 	config.Consumer.Offsets.Initial = sarama.OffsetOldest // 未找到组消费位移的时候从哪边开始消费
 
-	config.Consumer.Group.Rebalance.GroupStrategies = []sarama.BalanceStrategy{sarama.BalanceStrategyRoundRobin, sarama.BalanceStrategyRange}
+	//config.Consumer.Group.Rebalance.GroupStrategies = []sarama.BalanceStrategy{sarama.BalanceStrategyRoundRobin, sarama.BalanceStrategyRange}
 	config.Consumer.Offsets.Retry.Max = 10
+
 	name, _ := os.Hostname()
 	config.ClientID = name
 
 	if user != "" || pw != "" {
 		fmt.Printf("user=%s pw=%s \n", user, pw)
 		config.Net.SASL.Enable = true
-		config.Net.SASL.Version = sarama.SASLHandshakeV1
 		config.Net.SASL.Password = pw
 		config.Net.SASL.User = user
-		config.Net.SASL.Mechanism = sarama.SASLTypePlaintext
+		config.Net.SASL.Mechanism = "PLAIN"
+		config.Net.SASL.Version = sarama.SASLHandshakeV1
+		//config.Net.SASL.Mechanism = sarama.SASLMechanism("SASL_PLAINTEXT")
+		//config.Net.TLS.Config = &tls.Config{
+		//	InsecureSkipVerify: true,
+		//	ClientAuth:         0,
+		//}
 	}
 	file, err := os.OpenFile("./topic.msg", os.O_CREATE|os.O_RDWR|os.O_APPEND, 0755)
 	if err != nil {
@@ -66,9 +72,49 @@ func main() {
 		stop:    make(chan struct{}, 1),
 		output:  file,
 	}
-	addrs := strings.Split(kafkaAddr, ",")
-	custom.SaramaConsumerGroup(addrs, config)
+	//	addrs := strings.Split(kafkaAddr, ",")
+	// custom.SaramaConsumerGroup(addrs, config)
+	sarama.Logger = custom
+	consumer(config)
 	file.Close()
+}
+
+// -------------------------- no group -------------
+
+func consumer(config *sarama.Config) {
+	c, err := sarama.NewConsumer([]string{"10.200.6.16:9092"}, config)
+	if err != nil {
+		log.Errorf("err=%v", err)
+		return
+	}
+	ts, err := c.Topics()
+	if err != nil {
+		log.Errorf("err=%v", err)
+		return
+	}
+
+	for _, topic := range ts {
+		log.Infof("topic:%s", topic)
+	}
+	pars, err := c.Partitions("test_topic")
+	if err != nil {
+		log.Errorf("err=%v", err)
+		return
+	}
+	for i := 0; i < len(pars); i++ {
+		go func(id int32) {
+			partition, err := c.ConsumePartition("test_topic", id, sarama.OffsetOldest)
+			if err != nil {
+				log.Errorf("err=%v", err)
+				return
+			}
+			for msg := range partition.Messages() {
+				log.Infof(msg.Topic)
+				log.Infof(string(msg.Value))
+			}
+		}(pars[i])
+	}
+	<-make(chan struct{})
 }
 
 type Custom struct {
