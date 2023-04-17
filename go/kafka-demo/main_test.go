@@ -12,7 +12,7 @@ import (
 func TestCustom_SaramaConsumerGroup(t *testing.T) {
 	// Set up Kafka connection.
 	topic := "test_topic"
-	brokerAddr := []string{"10.200.6.16:9092"}
+	brokerAddr := []string{"tingyun-01:9092"}
 
 	config := sarama.NewConfig()
 	config.Producer.RequiredAcks = sarama.WaitForAll
@@ -127,8 +127,10 @@ func TestCustom_NoSASL(t *testing.T) {
 		t.Log(string(bts))
 	}
 	// Set up Kafka connection.
-	topic := "apm-02"
-	brokerAddr := []string{"10.200.14.226:9092"}
+	topic := "apm"
+	// topic := "skywalking-meters" // skywalking-metrics skywalking-segments skywalking-profilings skywalking-managements skywalking-logging
+	//topic := "skywalking-logging" //
+	brokerAddr := []string{"49.232.153.84:9092"}
 
 	config := sarama.NewConfig()
 	config.Producer.RequiredAcks = sarama.WaitForAll
@@ -157,15 +159,18 @@ func TestCustom_NoSASL(t *testing.T) {
 
 func TestSassss(t *testing.T) {
 	config := sarama.NewConfig()
-	config.Net.SASL.Enable = true
-	config.Version = sarama.V2_1_1_0
-	config.Net.SASL.User = "producer"
 	config.Consumer.Offsets.Initial = sarama.OffsetOldest
-	config.Net.SASL.Password = "producerpwd"
-	config.Net.SASL.Mechanism = sarama.SASLTypePlaintext
+	config.Version = sarama.V2_0_0_0
+
+	//config.Net.SASL.Enable = true
+	//config.Net.SASL.User = "producer"
+	////config.Net.SASL.Version = sarama.SASLHandshakeV1
+	//config.Net.SASL.Password = "producerpwd"
+	//config.Net.SASL.Mechanism = sarama.SASLTypePlaintext
+
 	config.Consumer.Offsets.Retry.Max = 10
 
-	brokers := []string{"10.200.6.16:9092"}
+	brokers := []string{"10.200.14.226:9092"}
 
 	client, err := sarama.NewClient(brokers, config)
 	if err != nil {
@@ -187,7 +192,7 @@ func TestSassss(t *testing.T) {
 
 func TestCustom_Print(t *testing.T) {
 	config := &kafka.ConfigMap{
-		"bootstrap.servers":  "10.200.6.16:9092",
+		"bootstrap.servers":  "tingyun-01:9092",
 		"sasl.username":      "producer",
 		"sasl.password":      "producerpwd",
 		"security.protocol":  "SASL_PLAINTEXT",
