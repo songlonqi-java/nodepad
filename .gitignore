@@ -3,6 +3,7 @@
 target
 /target
 **/dependency-reduced-pom.xml
+go/kafka-demo/kafka-demo
 
 # Gradle #
 #########

@@ -162,15 +162,15 @@ func TestSassss(t *testing.T) {
 	config.Consumer.Offsets.Initial = sarama.OffsetOldest
 	config.Version = sarama.V2_0_0_0
 
-	//config.Net.SASL.Enable = true
-	//config.Net.SASL.User = "producer"
-	////config.Net.SASL.Version = sarama.SASLHandshakeV1
-	//config.Net.SASL.Password = "producerpwd"
-	//config.Net.SASL.Mechanism = sarama.SASLTypePlaintext
+	config.Net.SASL.Enable = true
+	config.Net.SASL.User = "producer"
+	config.Net.SASL.Version = sarama.SASLHandshakeV1
+	config.Net.SASL.Password = "producerpwd"
+	config.Net.SASL.Mechanism = sarama.SASLTypePlaintext
 
 	config.Consumer.Offsets.Retry.Max = 10
 
-	brokers := []string{"10.200.14.226:9092"}
+	brokers := []string{"tingyun-01:9092"}
 
 	client, err := sarama.NewClient(brokers, config)
 	if err != nil {

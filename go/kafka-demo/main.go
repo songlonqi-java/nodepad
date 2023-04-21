@@ -1,14 +1,13 @@
 package main
 
 import (
+	"bufio"
 	"context"
+	"encoding/json"
 	"errors"
-	"flag"
 	"fmt"
 	"io"
-	"math/rand"
 	"os"
-	"strings"
 	"sync"
 	"time"
 
@@ -17,30 +16,83 @@ import (
 )
 
 var (
-	log       = logger.DefaultSLogger("kafkamq_custom")
-	kafkaAddr string
-	topics    string
-	user      string
-	pw        string
-	stop      = make(chan os.Signal, 1)
+	log        = logger.DefaultSLogger("kafkamq_custom")
+	jsonConfig = "./config.json"
 )
 
-func main() {
-	logger.InitRoot(&logger.Option{Path: "./log", Level: "debug", Flags: 0})
+type SaslConf struct {
+	Enable        bool   `json:"enable"`
+	SaslMechanism string `json:"sasl_mechanism"` // "PLAIN"
+	Username      string `json:"username"`       // "user"
+	Password      string `json:"password"`       // pw
+}
 
-	flag.StringVar(&kafkaAddr, "kafkaAddrs", "", "kafka addrs 10.300.14.1:9092,10.200.14.2:9092")
-	flag.StringVar(&topics, "topics", "", "topic,topic2,topic3")
-	flag.StringVar(&user, "user", "", "username")
-	flag.StringVar(&pw, "pw", "", "pw")
-	flag.Parse()
-	if kafkaAddr == "" || topics == "" {
-		fmt.Println("kafkaAddrs is nil  or  topics is nil")
+type kafkaConfig struct {
+	Addrs   []string  `json:"addrs"`
+	Topics  []string  `json:"topics"`
+	Version string    `json:"version"`
+	SASL    *SaslConf `json:"sasl"`
+}
+
+func writeToFile() {
+	//创建一个新文件，写入内容 5 句 “http://c.biancheng.net/golang/”
+	file, err := os.OpenFile(jsonConfig, os.O_WRONLY|os.O_CREATE, 0666)
+	if err != nil {
+		fmt.Println("文件打开失败", err)
+	}
+	//及时关闭file句柄
+	defer file.Close()
+	//写入文件时，使用带缓存的 *Writer
+	write := bufio.NewWriter(file)
+
+	write.WriteString(`
+{
+	"addrs": ["10.200.14.226:9092"],
+	"topics": ["apm", "apm01"],
+	"version": "2.5.1",
+	"sasl": {
+		"enable": true,
+		"sasl_mechanism": "PLAIN",
+		"username": "username",
+		"password": "pw"
+	}
+}`)
+
+	//Flush将缓存的文件真正写入到文件中
+	write.Flush()
+}
+
+func main() {
+	// 先判断这个文件是否存在，不存在创建后直接退出
+	_, err := os.Stat("./config.json")
+	if err != nil {
+		writeToFile()
+		fmt.Println("create ./config.json file,exit")
 		return
 	}
+	bts, err := os.ReadFile(jsonConfig)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	kafkaConf := &kafkaConfig{}
+	err = json.Unmarshal(bts, kafkaConf)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	logger.InitRoot(&logger.Option{Path: "./log", Level: "debug", Flags: 0})
+
 	config := sarama.NewConfig()
 	config.Consumer.Return.Errors = true
-	config.Version = sarama.V2_1_1_0                      // specify appropriate version
-	config.Consumer.Offsets.Initial = sarama.OffsetOldest // 未找到组消费位移的时候从哪边开始消费
+	version, err := sarama.ParseKafkaVersion(kafkaConf.Version)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	config.Version = version                              // specify appropriate version
+	config.Consumer.Offsets.Initial = sarama.OffsetNewest // 未找到组消费位移的时候从哪边开始消费
 
 	//config.Consumer.Group.Rebalance.GroupStrategies = []sarama.BalanceStrategy{sarama.BalanceStrategyRoundRobin, sarama.BalanceStrategyRange}
 	config.Consumer.Offsets.Retry.Max = 10
@@ -48,78 +100,34 @@ func main() {
 	name, _ := os.Hostname()
 	config.ClientID = name
 
-	if user != "" || pw != "" {
-		fmt.Printf("user=%s pw=%s \n", user, pw)
+	if kafkaConf.SASL.Enable {
 		config.Net.SASL.Enable = true
-		config.Net.SASL.Password = pw
-		config.Net.SASL.User = user
+		config.Net.SASL.Password = kafkaConf.SASL.Username
+		config.Net.SASL.User = kafkaConf.SASL.Password
 		config.Net.SASL.Mechanism = "PLAIN"
 		config.Net.SASL.Version = sarama.SASLHandshakeV1
-		//config.Net.SASL.Mechanism = sarama.SASLMechanism("SASL_PLAINTEXT")
-		//config.Net.TLS.Config = &tls.Config{
-		//	InsecureSkipVerify: true,
-		//	ClientAuth:         0,
-		//}
 	}
 	file, err := os.OpenFile("./topic.msg", os.O_CREATE|os.O_RDWR|os.O_APPEND, 0755)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-
+	defer file.Close()
 	custom := &Custom{
 		GroupID: "datakit",
+		topics:  kafkaConf.Topics,
 		stop:    make(chan struct{}, 1),
 		output:  file,
 	}
-	//	addrs := strings.Split(kafkaAddr, ",")
-	// custom.SaramaConsumerGroup(addrs, config)
+
+	custom.SaramaConsumerGroup(kafkaConf.Addrs, config)
 	sarama.Logger = custom
-	consumer(config)
-	file.Close()
-}
-
-// -------------------------- no group -------------
-
-func consumer(config *sarama.Config) {
-	c, err := sarama.NewConsumer([]string{"10.200.6.16:9092"}, config)
-	if err != nil {
-		log.Errorf("err=%v", err)
-		return
-	}
-	ts, err := c.Topics()
-	if err != nil {
-		log.Errorf("err=%v", err)
-		return
-	}
-
-	for _, topic := range ts {
-		log.Infof("topic:%s", topic)
-	}
-	pars, err := c.Partitions("test_topic")
-	if err != nil {
-		log.Errorf("err=%v", err)
-		return
-	}
-	for i := 0; i < len(pars); i++ {
-		go func(id int32) {
-			partition, err := c.ConsumePartition("test_topic", id, sarama.OffsetOldest)
-			if err != nil {
-				log.Errorf("err=%v", err)
-				return
-			}
-			for msg := range partition.Messages() {
-				log.Infof(msg.Topic)
-				log.Infof(string(msg.Value))
-			}
-		}(pars[i])
-	}
-	<-make(chan struct{})
 }
 
 type Custom struct {
 	GroupID string `toml:"group_id"`
 	stop    chan struct{}
+	topics  []string
 	output  io.WriteCloser
 }
 
@@ -134,6 +142,7 @@ func (c *Custom) Printf(format string, v ...interface{}) {
 func (c *Custom) Println(v ...interface{}) {
 	log.Debug(v)
 }
+
 func (c *Custom) SaramaConsumerGroup(addrs []string, config *sarama.Config) {
 	log = logger.SLogger("kafkamq_custom")
 	sarama.Logger = c
@@ -156,7 +165,7 @@ func (c *Custom) SaramaConsumerGroup(addrs []string, config *sarama.Config) {
 		}
 		if err != nil {
 			log.Errorf("new group is err,restart count=%d ,addrs=[%v] err=%v", count, addrs, err)
-			time.Sleep(time.Second * 10)
+			time.Sleep(time.Second * 5)
 			count++
 			continue
 		}
@@ -169,21 +178,15 @@ func (c *Custom) SaramaConsumerGroup(addrs []string, config *sarama.Config) {
 	handler := &consumerGroupHandler{ready: make(chan bool), output: c.output}
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
-	kafkaTopics := strings.Split(topics, ",")
-	notnilTopic := make([]string, 0)
-	for _, topic := range kafkaTopics {
-		if topic != "" {
-			notnilTopic = append(notnilTopic, topic)
-		}
-	}
-	log.Infof("custom is run with topics =[%+v]", topics)
+
+	log.Infof("custom is run with topics =[%+v]", c.topics)
 	go func() {
 		defer wg.Done()
 		for {
 			// `Consume` should be called inside an infinite loop, when a
 			// server-side rebalance happens, the consumer session will need to be
 			// recreated to get the new claims.
-			if err := group.Consume(ctx, notnilTopic, handler); err != nil {
+			if err := group.Consume(ctx, c.topics, handler); err != nil {
 				log.Errorf("Error from consumer: %v", err)
 			}
 			// check if context was canceled, signaling that the consumer should stop.
@@ -203,8 +206,6 @@ func (c *Custom) SaramaConsumerGroup(addrs []string, config *sarama.Config) {
 		log.Infof("terminating: context canceled")
 	case <-c.stop:
 		log.Infof("consumer stop")
-	case <-stop:
-
 	}
 
 	cancel()
@@ -235,15 +236,6 @@ func UseSupportedVersions(addrs []string, groupID string, config *sarama.Config)
 		}
 	}
 	return group, err
-}
-
-type sampler struct {
-	rate float64
-}
-
-func (s *sampler) sample() bool {
-	num := rand.Intn(10) //nolint
-	return num < int(s.rate*10)
 }
 
 type consumerGroupHandler struct {

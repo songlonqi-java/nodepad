@@ -6,7 +6,6 @@ require (
 	github.com/GuanceCloud/cliutils v0.0.0-20230321032257-b4eb6042b6c6
 	github.com/Shopify/sarama v1.38.1
 	github.com/confluentinc/confluent-kafka-go v1.9.2
-	github.com/segmentio/kafka-go v0.4.39
 	github.com/xdg-go/scram v1.1.2
 )
 
