@@ -1,0 +1,24 @@
+FROM openjdk:8-jdk
+LABEL authors='songlongqi'
+
+RUN mkdir -p /usr/local/ddtrace
+COPY ddtrace-guance/*.jar /usr/local/ddtrace/dd-java-agent.jar
+
+RUN mkdir -p /usr/local/otel
+COPY otel/*.jar /usr/local/otel/opentelemetry-javaagent.jar
+
+RUN mkdir -p /usr/local/skywalking
+COPY skywalking/skywalking-agent/ /usr/local/skywalking/
+
+COPY startup.sh /usr/local/startup.sh
+RUN chmod +x /usr/local/startup.sh
+
+# 先设置默认值，启动可以通过 docker -e 修改
+ENV PARAMS="--server.port=8080"
+ENV AGENT="ddtrace"
+#EXPOSE 8080
+
+RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
+COPY jar/*.jar /usr/local/app.jar
+
+CMD sh /usr/local/startup.sh
