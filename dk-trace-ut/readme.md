@@ -18,6 +18,11 @@
 具体看  dockerfile 和 startup.sh
 
 
+## build
+```shell
+docker build -t dk-trace-ut:v0.0.1 .
+```
+
 ## 启动命令
 docker run -d -p 8080:8080 -e AGENT="ddtrace or other" -e AGENTARGS="agent args" -e PARAMS="--server.port=8080"
 
