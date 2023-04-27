@@ -35,12 +35,25 @@ docker run -d --name=app --network=host -p 8080:8080 -e AGENT="ddtrace" -e AGENT
 
 otel:
 ```shell
-todo
-
 docker run -d --name app --network host -p 8080:8080 -e AGENT="otel" -e AGENTARGS="-Dotel.traces.exporter=otlp -Dotel.exporter.otlp.endpoint=http://localhost:4317" -e PARAMS="--server.port=8080"  dk-trace-ut:v0.0.1
+
+# otel 除了可以发送otlp到dk，还可以发送 jaeger、zipkin 以及 prom 数据到dk。
+
+# jaeger
+# otel.traces.exporter=jaeger otel.exporter.jaeger.endpoint
+# 环境变量方式：OTEL_TRACES_EXPORTER=jaeger OTEL_EXPORTER_JAEGER_ENDPOINT
+docker run -d --name app --network host -p 8080:8080 \
+ -e AGENT="otel" \
+ -e AGENTARGS="-Dotel.traces.exporter=jaeger -Dotel.exporter.jaeger.endpoint=http://localhost:14250" \
+ -e PARAMS="--server.port=8080" \
+ dk-trace-ut:v0.0.1
+
 ```
 
 skywalking:
 ```shell
-有时间补上。。
+# SW_AGENT_NAME
+# SW_AGENT_COLLECTOR_BACKEND_SERVICES
+# 更多参数查看 skywalking-agnet/config/agent.config
+docker run -d --name app --network host -p 8080:8080 -e AGENT="skywalking" -e SW_AGENT_COLLECTOR_BACKEND_SERVICES="10.200.14.226:11800" -e PARAMS="--server.port=8080"  dk-trace-ut:v0.0.1
 ```
