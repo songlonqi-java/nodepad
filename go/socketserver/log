@@ -1,0 +1,177 @@
+this body length is 309
+ip=10.200.6.16:57986  start
+ip=10.200.6.16:57986 version=NT1
+ip=10.200.6.16:57986 treeheader =&{domain:cat-demo-account hostName:songlq-PC addr:10.200.6.16 threadGroupName:main ThreadID:34 threadName:http-nio-8083-exec-1 MessageID:default-0ac80610-468152-1000 parentMessageID:default-0ac80610-468152-1000 RootMessageID:cat-demo-gateway-0ac80610-468152-1012 SessionToken: message:<nil> events:[] transactions:[] heartbeats:[] metrics:[]}
+ip=10.200.6.16:57986 t start
+ip=10.200.6.16:57986  time start 2023-05-29 16:08:18.716 +0800 CST
+ip=10.200.6.16:57986  E case
+metric=Message Type:Service.method, Name: GET, Status: 0, timeNamo:1685347 data lens :29
+ip=10.200.6.16:57986  E case
+metric=Message Type:Service.client, Name: 127.0.0.1, Status: 0, timeNamo:1685347 data lens :0
+ip=10.200.6.16:57986  t end
+trancation= trace-id=cat-demo-gateway-0ac80610-468152-1012
+ parentSpan-id=default-0ac80610-468152-1000
+ span-id=default-0ac80610-468152-1000
+ service=cat-demo-account resource=URL operation=http://localhost:8083/account source=cat status=ok
+ip:=10.200.6.16:57986   domain: cat-demo-account
+host name: songlq-PC
+address: 10.200.6.16
+thread group name: main
+thread ID: 34
+thread name: http-nio-8083-exec-1
+message ID: default-0ac80610-468152-1000
+parent message ID: default-0ac80610-468152-1000
+root message ID: cat-demo-gateway-0ac80610-468152-1012
+session token:
+events: [
+        Message Type:Service.method, Name: GET, Status: 0, timeNamo:1685347 data lens :29
+        Message Type:Service.client, Name: 127.0.0.1, Status: 0, timeNamo:1685347 data lens :0
+]
+transactions: [
+        Message Type:URL, Name: http://localhost:8083/account, Status: 0, timeNamo:0 data lens :0
+]
+heartbeats: [
+]
+metrics: [
+]
+
+ip=10.200.6.16:57986 context=&{m_data:[] m_tree:0xc0000ca360 m_parents:[]}
+-------end print------10.200.6.16:57986
+this body length is 303
+ip=10.200.6.16:57994  start
+ip=10.200.6.16:57994 version=NT1
+ip=10.200.6.16:57994 treeheader =&{domain:cat-demo-stock hostName:songlq-PC addr:10.200.6.16 threadGroupName:main ThreadID:36 threadName:http-nio-8084-exec-3 MessageID:default-0ac80610-468152-1001 parentMessageID:default-0ac80610-468152-1000 RootMessageID:cat-demo-gateway-0ac80610-468152-1012 SessionToken: message:<nil> events:[] transactions:[] heartbeats:[] metrics:[]}
+ip=10.200.6.16:57994 t start
+ip=10.200.6.16:57994  time start 2023-05-29 16:08:19.356 +0800 CST
+ip=10.200.6.16:57994  E case
+metric=Message Type:Service.method, Name: GET, Status: 0, timeNamo:1685347 data lens :27
+ip=10.200.6.16:57994  E case
+metric=Message Type:Service.client, Name: 127.0.0.1, Status: 0, timeNamo:1685347 data lens :0
+ip=10.200.6.16:57994  t end
+trancation= trace-id=cat-demo-gateway-0ac80610-468152-1012
+ parentSpan-id=default-0ac80610-468152-1000
+ span-id=default-0ac80610-468152-1001
+ service=cat-demo-stock resource=URL operation=http://localhost:8084/stock source=cat status=ok
+ip:=10.200.6.16:57994   domain: cat-demo-stock
+host name: songlq-PC
+address: 10.200.6.16
+thread group name: main
+thread ID: 36
+thread name: http-nio-8084-exec-3
+message ID: default-0ac80610-468152-1001
+parent message ID: default-0ac80610-468152-1000
+root message ID: cat-demo-gateway-0ac80610-468152-1012
+session token:
+events: [
+        Message Type:Service.method, Name: GET, Status: 0, timeNamo:1685347 data lens :27
+        Message Type:Service.client, Name: 127.0.0.1, Status: 0, timeNamo:1685347 data lens :0
+]
+transactions: [
+        Message Type:URL, Name: http://localhost:8084/stock, Status: 0, timeNamo:0 data lens :0
+]
+heartbeats: [
+]
+metrics: [
+]
+
+ip=10.200.6.16:57994 context=&{m_data:[] m_tree:0xc00019c000 m_parents:[]}
+-------end print------10.200.6.16:57994
+this body length is 508
+ip=10.200.6.16:57972  start
+ip=10.200.6.16:57972 version=NT1
+ip=10.200.6.16:57972 treeheader =&{domain:cat-demo-order hostName:songlq-PC addr:10.200.6.16 threadGroupName:main ThreadID:34 threadName:http-nio-8082-exec-1 MessageID:default-0ac80610-468152-1000 parentMessageID:cat-demo-gateway-0ac80610-468152-1012 RootMessageID:cat-demo-gateway-0ac80610-468152-1012 SessionToken: message:<nil> events:[] transactions:[] heartbeats:[] metrics:[]}
+ip=10.200.6.16:57972 t start
+ip=10.200.6.16:57972  time start 2023-05-29 16:08:18.047 +0800 CST
+ip=10.200.6.16:57972  E case
+metric=Message Type:Service.method, Name: GET, Status: 0, timeNamo:1685347 data lens :27
+ip=10.200.6.16:57972  E case
+metric=Message Type:Service.client, Name: 127.0.0.1, Status: 0, timeNamo:1685347 data lens :0
+ip=10.200.6.16:57972 t start
+ip=10.200.6.16:57972  time start 2023-05-29 16:08:18.279 +0800 CST
+ip=10.200.6.16:57972  E case
+metric=Message Type:RemoteCall, Name: , Status: 0, timeNamo:1685347 data lens :28
+ip=10.200.6.16:57972  t end
+ip=10.200.6.16:57972 t start
+ip=10.200.6.16:57972  time start 2023-05-29 16:08:18.897 +0800 CST
+ip=10.200.6.16:57972  E case
+metric=Message Type:RemoteCall, Name: , Status: 0, timeNamo:1685347 data lens :28
+ip=10.200.6.16:57972  t end
+ip=10.200.6.16:57972  t end
+trancation= trace-id=cat-demo-gateway-0ac80610-468152-1012
+ parentSpan-id=cat-demo-gateway-0ac80610-468152-1012
+ span-id=default-0ac80610-468152-1000
+ service=cat-demo-order resource=URL operation=http://localhost:8082/order source=cat status=ok
+ip:=10.200.6.16:57972   domain: cat-demo-order
+host name: songlq-PC
+address: 10.200.6.16
+thread group name: main
+thread ID: 34
+thread name: http-nio-8082-exec-1
+message ID: default-0ac80610-468152-1000
+parent message ID: cat-demo-gateway-0ac80610-468152-1012
+root message ID: cat-demo-gateway-0ac80610-468152-1012
+session token:
+events: [
+        Message Type:Service.method, Name: GET, Status: 0, timeNamo:1685347 data lens :27
+        Message Type:Service.client, Name: 127.0.0.1, Status: 0, timeNamo:1685347 data lens :0
+        Message Type:RemoteCall, Name: , Status: 0, timeNamo:1685347 data lens :28
+        Message Type:RemoteCall, Name: , Status: 0, timeNamo:1685347 data lens :28
+]
+transactions: [
+        Message Type:Call, Name: http://localhost:8083/account, Status: 0, timeNamo:0 data lens :0
+        Message Type:Call, Name: http://localhost:8084/stock, Status: 0, timeNamo:0 data lens :0
+        Message Type:URL, Name: http://localhost:8082/order, Status: 0, timeNamo:0 data lens :0
+]
+heartbeats: [
+]
+metrics: [
+]
+
+ip=10.200.6.16:57972 context=&{m_data:[] m_tree:0xc00019c240 m_parents:[]}
+-------end print------10.200.6.16:57972
+this body length is 357
+ip=10.200.6.16:51342  start
+ip=10.200.6.16:51342 version=NT1
+ip=10.200.6.16:51342 treeheader =&{domain:cat-demo-gateway hostName:songlq-PC addr:10.200.6.16 threadGroupName:main ThreadID:34 threadName:http-nio-8081-exec-1 MessageID:cat-demo-gateway-0ac80610-468152-1012 parentMessageID: RootMessageID: SessionToken: message:<nil> events:[] transactions:[] heartbeats:[] metrics:[]}
+ip=10.200.6.16:51342 t start
+ip=10.200.6.16:51342  time start 2023-05-29 16:08:17.482 +0800 CST
+ip=10.200.6.16:51342  E case
+metric=Message Type:Service.method, Name: GET, Status: 0, timeNamo:1685347 data lens :29
+ip=10.200.6.16:51342  E case
+metric=Message Type:Service.client, Name: 0:0:0:0:0:0:0:1, Status: 0, timeNamo:1685347 data lens :0
+ip=10.200.6.16:51342 t start
+ip=10.200.6.16:51342  time start 2023-05-29 16:08:17.611 +0800 CST
+ip=10.200.6.16:51342  E case
+metric=Message Type:RemoteCall, Name: , Status: 0, timeNamo:1685347 data lens :28
+ip=10.200.6.16:51342  t end
+ip=10.200.6.16:51342  t end
+trancation= trace-id=
+ parentSpan-id=
+ span-id=cat-demo-gateway-0ac80610-468152-1012
+ service=cat-demo-gateway resource=URL operation=http://localhost:8081/gateway source=cat status=ok
+ip:=10.200.6.16:51342   domain: cat-demo-gateway
+host name: songlq-PC
+address: 10.200.6.16
+thread group name: main
+thread ID: 34
+thread name: http-nio-8081-exec-1
+message ID: cat-demo-gateway-0ac80610-468152-1012
+parent message ID:
+root message ID:
+session token:
+events: [
+        Message Type:Service.method, Name: GET, Status: 0, timeNamo:1685347 data lens :29
+        Message Type:Service.client, Name: 0:0:0:0:0:0:0:1, Status: 0, timeNamo:1685347 data lens :0
+        Message Type:RemoteCall, Name: , Status: 0, timeNamo:1685347 data lens :28
+]
+transactions: [
+        Message Type:Call, Name: http://localhost:8082/order, Status: 0, timeNamo:0 data lens :0
+        Message Type:URL, Name: http://localhost:8081/gateway, Status: 0, timeNamo:0 data lens :0
+]
+heartbeats: [
+]
+metrics: [
+]
+
+ip=10.200.6.16:51342 context=&{m_data:[] m_tree:0xc00019c480 m_parents:[]}
+-------end print------10.200.6.16:51342

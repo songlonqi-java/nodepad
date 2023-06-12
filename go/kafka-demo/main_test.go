@@ -48,7 +48,7 @@ func TestCustom_SaramaConsumerGroup(t *testing.T) {
 func TestCustom_NoSASL(t *testing.T) {
 
 	msgstr := `[{
-	"@timestamp": "2023-03-26T17:17:09.416Z",
+	"@timestamp": "2023-05-30T13:48:09.416Z",
 	"@metadata": {
 		"beat": "filebeat",
 		"type": "doc",
@@ -80,7 +80,7 @@ func TestCustom_NoSASL(t *testing.T) {
 	"k8s_container_name": "k8snacos"
 },
 {
-	"@timestamp": "2023-03-26T17:17:09.416Z",
+	"@timestamp": "2023-05-30T13:48:09.416Z",
 	"@metadata": {
 		"beat": "filebeat",
 		"type": "doc",
@@ -127,10 +127,10 @@ func TestCustom_NoSASL(t *testing.T) {
 		t.Log(string(bts))
 	}
 	// Set up Kafka connection.
-	topic := "apm"
+	topic := "log_topic"
 	// topic := "skywalking-meters" // skywalking-metrics skywalking-segments skywalking-profilings skywalking-managements skywalking-logging
 	//topic := "skywalking-logging" //
-	brokerAddr := []string{"49.232.153.84:9092"}
+	brokerAddr := []string{"10.200.6.16:9092"}
 
 	config := sarama.NewConfig()
 	config.Producer.RequiredAcks = sarama.WaitForAll

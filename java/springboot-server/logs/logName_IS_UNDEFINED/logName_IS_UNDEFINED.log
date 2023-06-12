@@ -1,0 +1,76 @@
+2023-05-17 10:23:16.864 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 1.8.0_371 on songlq-PC with PID 567823 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-05-17 10:23:16.916 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-05-17 10:23:18.017 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-17 10:23:18.018 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
+2023-05-17 10:23:18.019 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-17 10:23:18.080 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
+2023-05-17 10:23:18.332 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-05-17 10:23:18.448 [cluster-rtt-ClusterId{value='64643a96ac0cd83dcc71f400', description='null'}-10.200.14.188:27017] INFO  o.m.d.connection - [info,71] [traceId= spanId=] - Opened connection [connectionId{localValue:2, serverValue:157}] to 10.200.14.188:27017
+2023-05-17 10:23:18.448 [cluster-ClusterId{value='64643a96ac0cd83dcc71f400', description='null'}-10.200.14.188:27017] INFO  o.m.d.connection - [info,71] [traceId= spanId=] - Opened connection [connectionId{localValue:1, serverValue:158}] to 10.200.14.188:27017
+2023-05-17 10:23:18.449 [cluster-ClusterId{value='64643a96ac0cd83dcc71f400', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Monitor thread successfully connected to server with description ServerDescription{address=10.200.14.188:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=31520795}
+2023-05-17 10:23:18.951 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-17 10:23:18.978 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 2.734 seconds (JVM running for 4.578)
+2023-05-17 10:24:52.205 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-17 10:24:52.231 [http-nio-8080-exec-1] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 10:24:52.248 [http-nio-8080-exec-1] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 10:44:02.961 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 1.8.0_371 on songlq-PC with PID 587802 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-05-17 10:44:02.966 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-05-17 10:44:04.140 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-17 10:44:04.141 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
+2023-05-17 10:44:04.142 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-05-17 10:44:04.239 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
+2023-05-17 10:44:04.511 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-05-17 10:44:04.618 [cluster-ClusterId{value='64643f74179ed33813874f58', description='null'}-10.200.14.188:27017] INFO  o.m.d.connection - [info,71] [traceId= spanId=] - Opened connection [connectionId{localValue:2, serverValue:160}] to 10.200.14.188:27017
+2023-05-17 10:44:04.618 [cluster-rtt-ClusterId{value='64643f74179ed33813874f58', description='null'}-10.200.14.188:27017] INFO  o.m.d.connection - [info,71] [traceId= spanId=] - Opened connection [connectionId{localValue:1, serverValue:159}] to 10.200.14.188:27017
+2023-05-17 10:44:04.619 [cluster-ClusterId{value='64643f74179ed33813874f58', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Monitor thread successfully connected to server with description ServerDescription{address=10.200.14.188:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=24702410}
+2023-05-17 10:44:05.212 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-17 10:44:05.238 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 2.891 seconds (JVM running for 4.684)
+2023-05-17 10:44:10.000 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-17 10:44:10.029 [http-nio-8080-exec-1] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 10:44:10.050 [http-nio-8080-exec-1] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 11:00:24.013 [http-nio-8080-exec-2] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 11:00:24.014 [http-nio-8080-exec-2] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 12:02:48.428 [http-nio-8080-exec-3] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 12:02:48.429 [http-nio-8080-exec-3] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 12:02:57.433 [http-nio-8080-exec-4] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 12:02:57.434 [http-nio-8080-exec-4] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 12:08:20.301 [http-nio-8080-exec-5] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 12:08:20.302 [http-nio-8080-exec-5] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 12:08:28.591 [http-nio-8080-exec-6] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 12:08:28.592 [http-nio-8080-exec-6] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 12:12:21.915 [http-nio-8080-exec-7] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 12:12:21.916 [http-nio-8080-exec-7] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 12:24:59.715 [http-nio-8080-exec-8] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 12:24:59.716 [http-nio-8080-exec-8] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-05-17 12:33:06.661 [http-nio-8080-exec-9] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+host				:localhost:8080
+connection				:close
+
+2023-05-17 12:33:06.662 [http-nio-8080-exec-9] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth

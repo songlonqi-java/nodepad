@@ -1,0 +1,237 @@
+Connection from:  10.200.14.226:31120
+Received data:
+10.200.14.226main18http-nio-8082-exec-1Unknown-0ac80ee2-468011-0tåËü1springboot-URpageNameEÕÉü1
+URL.ServeserverIp0ip=ipMÕÉü1
+metric.keyC1MÕÉü1
+metric.keyT5T0contentÀ=
+length:236
+
+Received data:
+10.200.14.2260T0G cat-StatusUpdateTaskUnknown-0ac80ee2-468011-1tҗý1SystemRebootEӗý1Reboot
+length:166
+
+Received data:
+10.200.14.2260â<?xml version="1.0" encoding="utf-8"?>2-468011-2tӗý1SystemStatusHԗý1     Heartbeat
+<status timestamp="2023-05-23 19:29:44.924">
+   <runtime start-time="1684841346938" up-time="38052" java-version="1.8.0_341" user-name="root">
+      <user-dir>/usr/local/cat</user-dir>
+      <java-classpath>springboot-server.jar,zipfs.jar,nashorn.jar,sunec.jar,sunjce_provider.jar,sunpkcs11.jar,dnsns.jar,localedata.jar,cldrdata.jar,jaccess.jar,jfxrt.jar</java-classpath>
+   </runtime>
+   <os name="Linux" arch="amd64" version="3.10.0-957.el7.x86_64" available-processors="2" system-load-average="0.09" process-time="9340000000" total-physical-memory="4142751744" free-physical-memory="1532719104" committed-virtual-memory="3690115072" total-swap-space="4294963200" free-swap-space="4293644288"/>
+   <disk>
+      <disk-volume id="/" total="37558423552" free="15866408960" usable="15866408960"/>
+      <disk-volume id="/data" total="37558423552" free="15866408960" usable="15866408960"/>
+   </disk>
+   <memory max="921174016" total="260046848" free="89484800" heap-usage="170562048" non-heap-usage="55796488">
+      <gc name="PS Scavenge" count="9" time="92"/>
+      <gc name="PS MarkSweep" count="2" time="116"/>
+   </memory>
+   <thread count="19" daemon-count="15" peek-count="19" total-started-count="22" cat-thread-count="0" pigeon-thread-count="0" http-thread-count="0">
+   </thread>
+   <message produced="0" overflowed="0" bytes="0"/>
+   <extension id="System">
+      <extensionDetail id="LoadAverage" value="0.09"/>
+      <extensionDetail id="FreePhysicalMemory" value="1.532465152E9"/>
+      <extensionDetail id="FreeSwapSpaceSize" value="4.293644288E9"/>
+   </extension>
+   <extension id="Disk">
+      <extensionDetail id="/ Free" value="1.586640896E10"/>
+      <extensionDetail id="/data Free" value="1.586640896E10"/>
+   </extension>
+   <extension id="GC">
+      <extensionDetail id="PS ScavengeCount" value="9.0"/>
+      <extensionDetail id="PS ScavengeTime" value="92.0"/>
+      <extensionDetail id="PS MarkSweepCount" value="2.0"/>
+      <extensionDetail id="PS MarkSweepTime" value="116.0"/>
+   </extension>
+   <extension id="JVMHeap">
+      <extensionDetail id="Code Cache" value="7601536.0"/>
+      <extensionDetail id="Metaspace" value="4.2684704E7"/>
+      <extensionDetail id="Compressed Class Space" value="5564312.0"/>
+      <extensionDetail id="PS Eden Space" value="1.59664784E8"/>
+      <extensionDetail id="PS Survivor Space" value="0.0"/>
+      <extensionDetail id="PS Old Gen" value="1.0897264E7"/>
+   </extension>
+   <extension id="FrameworkThread">
+      <extensionDetail id="HttpThread" value="6.0"/>
+      <extensionDetail id="CatThread" value="0.0"/>
+      <extensionDetail id="PigeonThread" value="0.0"/>
+      <extensionDetail id="ActiveThread" value="19.0"/>
+      <extensionDetail id="StartedThread" value="22.0"/>
+   </extension>
+   <extension id="CatUsage">
+      <extensionDetail id="Produced" value="2.0"/>
+      <extensionDetail id="Overflowed" value="0.0"/>
+      <extensionDetail id="Bytes" value="402.0"/>
+   </extension>
+   <extension id="client-send-queue">
+      <description><![CDATA[client-send-queue]]></description>
+      <extensionDetail id="msg-queue" value="0.0"/>
+      <extensionDetail id="atomic-queue" value="0.0"/>
+   </extension>
+</status>
+Eöý1    Heartbeatjstack0L1: "Catalina-utility-1" Id=12 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@47281442
+        at sun.misc.Unsafe.park(Native Method)
+        -  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@47281442
+        at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1088)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+        at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        ...
+
+2: "Catalina-utility-2" Id=13 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@47281442
+        at sun.misc.Unsafe.park(Native Method)
+        -  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@47281442
+        at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+        at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+        at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        ...
+
+3: "DestroyJavaVM" Id=17 RUNNABLE
+
+4: "Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@356defb6
+        at java.lang.Object.wait(Native Method)
+        -  waiting on java.lang.ref.ReferenceQueue$Lock@356defb6
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:150)
+        at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:171)
+        at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+5: "Keep-Alive-Timer" Id=20 TIMED_WAITING
+        at java.lang.Thread.sleep(Native Method)
+        at sun.net.www.http.KeepAliveCache.run(KeepAliveCache.java:172)
+        at java.lang.Thread.run(Thread.java:750)
+
+6: "Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@7ca56776
+        at java.lang.Object.wait(Native Method)
+        -  waiting on java.lang.ref.Reference$Lock@7ca56776
+        at java.lang.Object.wait(Object.java:502)
+        at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+        at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+7: "Signal Dispatcher" Id=4 RUNNABLE
+
+8: "Thread-3" Id=23 RUNNABLE (in native)
+        at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+        at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+        at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+        at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+        at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+        at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:101)
+        at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+        at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:813)
+        ...
+
+9: "cat-3" Id=29 TIMED_WAITING
+        at java.lang.Thread.sleep(Native Method)
+        at com.dianping.cat.analyzer.LocalAggregator$DataUploader.run(LocalAggregator.java:84)
+        at java.lang.Thread.run(Thread.java:750)
+        at org.unidal.helper.Threads$RunnableThread.run(Threads.java:294)
+
+10: "cat-StatusUpdateTask" Id=28 RUNNABLE
+        at sun.management.ThreadImpl.dumpThreads0(Native Method)
+        at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+        at com.dianping.cat.status.StatusInfoCollector.visitThread(StatusInfoCollector.java:288)
+        at com.dianping.cat.status.model.transform.BaseVisitor.visitStatus(BaseVisitor.java:86)
+        at com.dianping.cat.status.StatusInfoCollector.visitStatus(StatusInfoCollector.java:273)
+        at com.dianping.cat.status.model.entity.StatusInfo.accept(StatusInfo.java:33)
+        at com.dianping.cat.status.StatusUpdateTask.run(StatusUpdateTask.java:182)
+        at java.lang.Thread.run(Thread.java:750)
+        ...
+
+11: "cat-TcpSocketSender" Id=24 TIMED_WAITING
+        at java.lang.Thread.sleep(Native Method)
+        at com.dianping.cat.message.io.TcpSocketSender.processNormalMessage(TcpSocketSender.java:215)
+        at com.dianping.cat.message.io.TcpSocketSender.run(TcpSocketSender.java:240)
+        at java.lang.Thread.run(Thread.java:750)
+        at org.unidal.helper.Threads$RunnableThread.run(Threads.java:294)
+
+12: "cat-TcpSocketSender-ChannelManager" Id=25 TIMED_WAITING
+        at java.lang.Thread.sleep(Native Method)
+        at com.dianping.cat.message.io.ChannelManager.run(ChannelManager.java:384)
+        at java.lang.Thread.run(Thread.java:750)
+        at org.unidal.helper.Threads$RunnableThread.run(Threads.java:294)
+
+13: "container-0" Id=14 TIMED_WAITING
+        at java.lang.Thread.sleep(Native Method)
+        at org.apache.catalina.core.StandardServer.await(StandardServer.java:563)
+        at org.springframework.boot.web.embedded.tomcat.TomcatWebServer$1.run(TomcatWebServer.java:197)
+
+14: "http-nio-8082-Acceptor" Id=16 RUNNABLE (in native)
+        at sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method)
+        at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:424)
+        at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:252)
+        at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:542)
+        at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:78)
+        at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:129)
+        at java.lang.Thread.run(Thread.java:750)
+
+15: "http-nio-8082-Poller" Id=15 RUNNABLE (in native)
+        at sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+        at sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+        at sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+        at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+        at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+        at org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:796)
+        at java.lang.Thread.run(Thread.java:750)
+
+16: "http-nio-8082-exec-1" Id=18 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3ee42051
+        at sun.misc.Unsafe.park(Native Method)
+        -  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3ee42051
+        at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:20
+length:10240
+
+Received data:
+ 39)
+        at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:146)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:33)
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1114)
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1176)
+        ...
+
+17: "http-nio-8082-exec-2" Id=19 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3ee42051
+        at sun.misc.Unsafe.park(Native Method)
+        -  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3ee42051
+        at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+        at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:146)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:33)
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1114)
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1176)
+        ...
+
+18: "http-nio-8082-exec-3" Id=21 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3ee42051
+        at sun.misc.Unsafe.park(Native Method)
+        -  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3ee42051
+        at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+        at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:146)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:33)
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1114)
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1176)
+        ...
+
+19: "http-nio-8082-exec-4" Id=30 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3ee42051
+        at sun.misc.Unsafe.park(Native Method)
+        -  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3ee42051
+        at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+        at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:146)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:33)
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1114)
+        at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1176)
+        ...
+
+T0dumpLocked=falseà
+length:3006

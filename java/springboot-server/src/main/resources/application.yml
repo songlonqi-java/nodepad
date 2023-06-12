@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+api:
+  url: http://localhost:${server.port}
+spring:
+  application:
+    name: server
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      uri: mongodb://appAdmin:123456@10.200.14.188:27017/appdb
+#      uri: mongodb://mongoadmin:secret@10.200.14.188:27017/appdb
+extra:
+  host: localhost
+client: false
