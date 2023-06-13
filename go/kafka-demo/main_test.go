@@ -1,9 +1,13 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
+	"io"
+	"os"
 	"testing"
+	"time"
 
 	"github.com/Shopify/sarama"
 	"github.com/confluentinc/confluent-kafka-go/kafka"
@@ -240,3 +244,73 @@ func TestCustom_Print(t *testing.T) {
 		}
 	}
 }
+
+func TestCustom_ty(t *testing.T) {
+
+	//	msgstr := `{"common":{"app_id":"7024","app_key":"83adbec7d44a431e86767506860ce31c","app_name":"LF19ITS-智学苑-iOS","app_type":"app","app_version_name":"3.3.1(2.17.1)","carrier_name":"","channel_name":"AppStore","city_name":"","client_ip":"29.132.15.39","connect_type_name":"WIFI","country_name":"U.S.A","device_id":"19091","latitude":"0.0","longitude":"0.0","manufacturer_model_name":"iPhone 6","manufacturer_name":"Apple","os_name":"iOS","os_version_name":"12.5.7","region_name":"","session_id":"526a3bf7-b636-4e03-869c-774b7d00f17d","user_id":""},"ux_view":{"additional_info":"","timestamp":1686623744,"type":"ux-view","uuid":"1686537789239347747","view_appear_time":146,"view_composite_name":"登录","view_interactive_time":146,"view_name":""}}`
+	// msgstr := `{"common":{"app_id":"7023","app_key":"c745489b5e484a998af079bd8546295e","app_name":"LF19ITS-智学苑-Android","app_type":"app","app_version_name":"2.7.5(2.17.1)","carrier_name":"","channel_name":"","city_name":"","client_ip":"29.132.15.38","connect_type_name":"WIFI","country_name":"U.S.A","device_id":"19099","latitude":"0.0","longitude":"0.0","manufacturer_model_name":"Pixel","manufacturer_name":"Google","os_name":"Android","os_version_name":"10","region_name":"","session_id":"c95a66f2-42af-66e1-6b32-b28d730e8b6a","user_id":"haoyadong"},"ux_view":{"additional_info":"","timestamp":1686535776,"type":"ux-view","uuid":"1686536098615952201","view_appear_time":79,"view_composite_name":"com.wisdom.lms.ui.activity.LoginVoiceAccountActivity No_Catched_Action","view_interactive_time":79,"view_name":"com.wisdom.lms.ui.activity.LoginVoiceAccountActivity"}}`
+
+	// Set up Kafka connection.
+	topic := "tyrum"
+
+	brokerAddr := []string{"10.200.6.16:9092"}
+
+	config := sarama.NewConfig()
+	config.Producer.RequiredAcks = sarama.WaitForAll
+	config.Producer.Retry.Max = 5
+	config.Producer.Return.Successes = true
+
+	producer, err := sarama.NewSyncProducer(brokerAddr, config)
+	if err != nil {
+		t.Fatalf("Failed to create Kafka producer: %v", err)
+	}
+	defer producer.Close()
+
+	lines, err := ReadLinesV3("/data/home/songlq/data/sxtbdemo.msg.md")
+	if err != nil {
+		t.Fatalf("read lines err=%v", err)
+		return
+	}
+	for _, msgstr := range lines {
+		// Send message to Kafka.
+		msg := &sarama.ProducerMessage{
+			Topic: topic,
+			Value: sarama.StringEncoder(msgstr),
+		}
+
+		partition, offset, err := producer.SendMessage(msg)
+		if err != nil {
+			t.Fatalf("Failed to send message to Kafka: %v", err)
+		}
+
+		fmt.Printf("Message sent successfully. Partition: %d, Offset: %d\n", partition, offset)
+		time.Sleep(time.Second / 10)
+	}
+}
+
+func ReadLinesV3(path string) ([]string, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+
+	var lines []string
+	r := bufio.NewReader(f)
+	for {
+		// ReadLine is a low-level line-reading primitive.
+		// Most callers should use ReadBytes('\n') or ReadString('\n') instead or use a Scanner.
+		bytes, _, err := r.ReadLine()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return lines, err
+		}
+		lines = append(lines, string(bytes))
+	}
+	return lines, nil
+}
+
+// {"common":{"app_id":"7012","app_key":"6e644d0a66b341c0b20b4021e4423737","app_name":"LF12YiDYY-神行太保-Android","app_type":"app","app_version_name":"12.57(2.17.0.11)","carrier_name":"","channel_name":"","city_name":"","client_ip":"29.132.15.13","connect_type_name":"","country_name":"U.S.A","device_id":"18051","latitude":"0.0","longitude":"0.0","manufacturer_model_name":"SM-A9200","manufacturer_name":"Samsung","os_name":"Android","os_version_name":"8.0.0","region_name":"","session_id":"5e4806f5-8368-48a1-44b1-71592165f425","user_id":"CHENGANG-069"},"ux_view":{"additional_info":"","timestamp":1686111477,"type":"ux-view","uuid":"1686111769131604378","view_appear_time":15,"view_composite_name":"com.apperian.ease.appcatalog.ui.Login ApplicationInForeground","view_interactive_time":15,"view_name":"com.apperian.ease.appcatalog.ui.Login"}}
+// {"common":{"app_id":"7012","app_key":"6e644d0a66b341c0b20b4021e4423737","app_name":"LF12YiDYY-神行太保-Android","app_type":"app","app_version_name":"12.57(2.17.0.11)","carrier_name":"","channel_name":"","city_name":"","client_ip":"29.132.15.18","connect_type_name":"","country_name":"U.S.A","device_id":"18051","latitude":"0.0","longitude":"0.0","manufacturer_model_name":"SM-A9200","manufacturer_name":"Samsung","os_name":"Android","os_version_name":"8.0.0","region_name":"","session_id":"5e4806f5-8368-48a1-44b1-71592165f425","user_id":"CHENGANG-069"},"ux_view":{"additional_info":"","timestamp":1686111477,"type":"ux-view","uuid":"1686111769131604378","view_appear_time":15,"view_composite_name":"com.apperian.ease.appcatalog.ui.Login ApplicationInForeground","view_interactive_time":15,"view_name":"com.apperian.ease.appcatalog.ui.Login"}}
