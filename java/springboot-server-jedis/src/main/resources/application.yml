@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+api:
+  url: http://localhost:${server.port}
+spring:
+  application:
+    name: server
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  datasource:
+    username: root
+    password: 123456#..A
+    url: jdbc:mysql://49.232.153.84:3306/tmalldemodb?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+  redis:
+    # Redis本地服务器地址，注意要开启redis服务，即那个redis-server.exe
+    host: 10.200.14.188
+    # Redis服务器端口,默认为6379.若有改动按改动后的来
+    port: 6379
+    #Redis服务器连接密码，默认为空，若有设置按设置的来
+    password:
+    database: 0
+    redisson:
+      config: |
+        singleServerConfig:
+          password: 
+          address: "redis://10.200.14.188:6379"
+          database: 0
+
+extra:
+  host: localhost
+client: false

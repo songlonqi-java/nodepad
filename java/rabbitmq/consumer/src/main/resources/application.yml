@@ -1,0 +1,15 @@
+server:
+  port: 8086
+#配置RabbitMQ
+spring:
+  rabbitmq:
+    host: 10.200.14.188
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+#  config-center:
+#    address: zookeeper://127.0.0.1:2181
+#  metadata-report:
+#    address: zookeeper://127.0.0.1:2181

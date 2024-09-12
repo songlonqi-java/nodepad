@@ -134,7 +134,7 @@ func TestCustom_NoSASL(t *testing.T) {
 	topic := "log_topic"
 	// topic := "skywalking-meters" // skywalking-metrics skywalking-segments skywalking-profilings skywalking-managements skywalking-logging
 	//topic := "skywalking-logging" //
-	brokerAddr := []string{"10.200.6.16:9092"}
+	brokerAddr := []string{"10.200.14.226:9092"}
 
 	config := sarama.NewConfig()
 	config.Producer.RequiredAcks = sarama.WaitForAll

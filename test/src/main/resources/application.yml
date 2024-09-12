@@ -1,0 +1,20 @@
+server:
+  port: 8990
+spring:
+  application:
+    name: test-consumer
+#  datasource:
+#    dynamic:
+#      primary: master
+#      datasource:
+#        master:
+#          url: jdbc:mysql://b2c-mysql.prd.com:3306/hcloud?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC
+#          username: fagao
+#
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#        slave:
+#          url: jdbc:mysql://mysql.dev.com:3306/ec_product_dev?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC
+#          username: fagao
+#
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+

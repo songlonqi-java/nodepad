@@ -1,0 +1,108 @@
+2023-06-19 11:07:33.675 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.7 on songlq-PC with PID 12415 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-06-19 11:07:33.679 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-06-19 11:07:34.624 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-19 11:07:34.625 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
+2023-06-19 11:07:34.626 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-06-19 11:07:34.671 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
+2023-06-19 11:07:34.849 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-06-19 11:07:34.904 [cluster-ClusterId{value='648fc67664dd2a27b8546320', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,76] [traceId= spanId=] - Exception in monitor thread while connecting to server 10.200.14.188:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: 拒绝连接
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2023-06-19 11:07:35.418 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-19 11:07:35.444 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 2.229 seconds (JVM running for 2.937)
+2023-06-19 13:32:34.797 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.7 on songlq-PC with PID 23483 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-06-19 13:32:34.799 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-06-19 13:32:35.666 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-19 13:32:35.667 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
+2023-06-19 13:32:35.668 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-06-19 13:32:35.719 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
+2023-06-19 13:32:35.885 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-06-19 13:32:35.931 [cluster-ClusterId{value='648fe87363e0093f6086a59d', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,76] [traceId= spanId=] - Exception in monitor thread while connecting to server 10.200.14.188:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: 拒绝连接
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2023-06-19 13:32:36.411 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-19 13:32:36.434 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 2.073 seconds (JVM running for 2.611)
+2023-06-19 13:42:18.989 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.7 on songlq-PC with PID 24835 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-06-19 13:42:18.992 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-06-19 13:42:19.872 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-19 13:42:19.873 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
+2023-06-19 13:42:19.874 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-06-19 13:42:19.920 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
+2023-06-19 13:42:20.076 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-06-19 13:42:20.122 [cluster-ClusterId{value='648feabc1e69b31f27607fb0', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,76] [traceId= spanId=] - Exception in monitor thread while connecting to server 10.200.14.188:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: 拒绝连接
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2023-06-19 13:42:20.621 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-19 13:42:20.648 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 2.096 seconds (JVM running for 2.642)
+2023-06-19 13:44:08.427 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.7 on songlq-PC with PID 24965 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-06-19 13:44:08.455 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-06-19 13:44:09.790 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-19 13:44:09.791 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
+2023-06-19 13:44:09.792 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-06-19 13:44:09.874 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
+2023-06-19 13:44:10.188 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-06-19 13:44:10.295 [cluster-ClusterId{value='648feb2a71cd577123c998d5', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,76] [traceId= spanId=] - Exception in monitor thread while connecting to server 10.200.14.188:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: 拒绝连接
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2023-06-19 13:44:10.983 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-19 13:44:11.035 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 3.238 seconds (JVM running for 5.332)

@@ -1,76 +1,195 @@
-2023-05-17 10:23:16.864 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 1.8.0_371 on songlq-PC with PID 567823 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
-2023-05-17 10:23:16.916 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
-2023-05-17 10:23:18.017 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
-2023-05-17 10:23:18.018 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
-2023-05-17 10:23:18.019 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
-2023-05-17 10:23:18.080 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
-2023-05-17 10:23:18.332 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2023-05-17 10:23:18.448 [cluster-rtt-ClusterId{value='64643a96ac0cd83dcc71f400', description='null'}-10.200.14.188:27017] INFO  o.m.d.connection - [info,71] [traceId= spanId=] - Opened connection [connectionId{localValue:2, serverValue:157}] to 10.200.14.188:27017
-2023-05-17 10:23:18.448 [cluster-ClusterId{value='64643a96ac0cd83dcc71f400', description='null'}-10.200.14.188:27017] INFO  o.m.d.connection - [info,71] [traceId= spanId=] - Opened connection [connectionId{localValue:1, serverValue:158}] to 10.200.14.188:27017
-2023-05-17 10:23:18.449 [cluster-ClusterId{value='64643a96ac0cd83dcc71f400', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Monitor thread successfully connected to server with description ServerDescription{address=10.200.14.188:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=31520795}
-2023-05-17 10:23:18.951 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
-2023-05-17 10:23:18.978 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 2.734 seconds (JVM running for 4.578)
-2023-05-17 10:24:52.205 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-17 10:24:52.231 [http-nio-8080-exec-1] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:45:05.582 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.7 on songlq-PC with PID 29216 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-06-20 14:45:05.596 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-06-20 14:45:06.956 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-20 14:45:06.957 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
+2023-06-20 14:45:06.958 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-06-20 14:45:07.027 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
+2023-06-20 14:45:07.337 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-06-20 14:45:07.432 [cluster-ClusterId{value='64914af39e7dfd17c2640aae', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,76] [traceId= spanId=] - Exception in monitor thread while connecting to server 10.200.14.188:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: 拒绝连接
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2023-06-20 14:45:08.031 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-20 14:45:08.089 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 3.139 seconds (JVM running for 5.132)
+2023-06-20 14:45:28.975 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId=45bd5858d8ef4cd3ee96f816035dc5ec spanId=b5b15936cb0e800e] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-20 14:45:28.991 [http-nio-8080-exec-1] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=45bd5858d8ef4cd3ee96f816035dc5ec spanId=b5b15936cb0e800e] - url:/,header:
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
+sec-ch-ua				:"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"
+sec-ch-ua-mobile				:?0
+sec-ch-ua-platform				:"Linux"
+upgrade-insecure-requests				:1
+user-agent				:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+accept				:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+sec-fetch-site				:none
+sec-fetch-mode				:navigate
+sec-fetch-user				:?1
+sec-fetch-dest				:document
+accept-encoding				:gzip, deflate, br
+accept-language				:zh-CN,zh;q=0.9,en;q=0.8
 
-2023-05-17 10:24:52.248 [http-nio-8080-exec-1] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 10:44:02.961 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 1.8.0_371 on songlq-PC with PID 587802 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
-2023-05-17 10:44:02.966 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
-2023-05-17 10:44:04.140 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
-2023-05-17 10:44:04.141 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
-2023-05-17 10:44:04.142 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
-2023-05-17 10:44:04.239 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
-2023-05-17 10:44:04.511 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
-2023-05-17 10:44:04.618 [cluster-ClusterId{value='64643f74179ed33813874f58', description='null'}-10.200.14.188:27017] INFO  o.m.d.connection - [info,71] [traceId= spanId=] - Opened connection [connectionId{localValue:2, serverValue:160}] to 10.200.14.188:27017
-2023-05-17 10:44:04.618 [cluster-rtt-ClusterId{value='64643f74179ed33813874f58', description='null'}-10.200.14.188:27017] INFO  o.m.d.connection - [info,71] [traceId= spanId=] - Opened connection [connectionId{localValue:1, serverValue:159}] to 10.200.14.188:27017
-2023-05-17 10:44:04.619 [cluster-ClusterId{value='64643f74179ed33813874f58', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Monitor thread successfully connected to server with description ServerDescription{address=10.200.14.188:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=24702410}
-2023-05-17 10:44:05.212 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
-2023-05-17 10:44:05.238 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 2.891 seconds (JVM running for 4.684)
-2023-05-17 10:44:10.000 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-05-17 10:44:10.029 [http-nio-8080-exec-1] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:45:32.099 [http-nio-8080-exec-2] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=fed7231a86a2bf3faa918809ac18d487 spanId=f478f709d051cc2e] - url:/gateway,header:
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
+sec-ch-ua				:"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"
+sec-ch-ua-mobile				:?0
+sec-ch-ua-platform				:"Linux"
+upgrade-insecure-requests				:1
+user-agent				:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+accept				:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+sec-fetch-site				:same-origin
+sec-fetch-mode				:navigate
+sec-fetch-user				:?1
+sec-fetch-dest				:document
+referer				:http://localhost:8080/
+accept-encoding				:gzip, deflate, br
+accept-language				:zh-CN,zh;q=0.9,en;q=0.8
 
-2023-05-17 10:44:10.050 [http-nio-8080-exec-1] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 11:00:24.013 [http-nio-8080-exec-2] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:45:32.107 [http-nio-8080-exec-2] INFO  c.z.o.s.c.ServerController - [gateway,55] [traceId=fed7231a86a2bf3faa918809ac18d487 spanId=ee4e73c91328b8c0] - this is tag
+2023-06-20 14:45:32.150 [http-nio-8080-exec-3] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=fed7231a86a2bf3faa918809ac18d487 spanId=92b5fe837e8459b2] - url:/resource,header:
+accept				:text/plain, application/json, application/*+json, */*
+traceparent				:00-fed7231a86a2bf3faa918809ac18d487-31e070101d079a8b-01
+user-agent				:Java/17.0.7
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
 
-2023-05-17 11:00:24.014 [http-nio-8080-exec-2] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 12:02:48.428 [http-nio-8080-exec-3] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:45:32.150 [http-nio-8080-exec-3] INFO  c.z.o.s.c.ServerController - [resource,72] [traceId=fed7231a86a2bf3faa918809ac18d487 spanId=6863a1c7f38cd946] - this is resource
+2023-06-20 14:45:32.200 [http-nio-8080-exec-4] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=fed7231a86a2bf3faa918809ac18d487 spanId=0fb656988aeb83e7] - url:/auth,header:
+accept				:text/plain, application/json, application/*+json, */*
+traceparent				:00-fed7231a86a2bf3faa918809ac18d487-fc25f901ddd6c506-01
+user-agent				:Java/17.0.7
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
 
-2023-05-17 12:02:48.429 [http-nio-8080-exec-3] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 12:02:57.433 [http-nio-8080-exec-4] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:45:32.201 [http-nio-8080-exec-4] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId=fed7231a86a2bf3faa918809ac18d487 spanId=35761cbc2620307e] - this is auth
+2023-06-20 14:45:32.216 [http-nio-8080-exec-5] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=fed7231a86a2bf3faa918809ac18d487 spanId=16c48c8f0b5e93b7] - url:/billing,header:
+accept				:application/json, application/*+json
+traceparent				:00-fed7231a86a2bf3faa918809ac18d487-3fa2de33ec5fd3a0-01
+user-agent				:Java/17.0.7
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
 
-2023-05-17 12:02:57.434 [http-nio-8080-exec-4] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 12:08:20.301 [http-nio-8080-exec-5] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:45:32.224 [http-nio-8080-exec-5] INFO  c.z.o.s.c.ServerController - [billing,87] [traceId=fed7231a86a2bf3faa918809ac18d487 spanId=734b6000109b3bb2] - this is method3,null
+2023-06-20 14:57:20.005 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.7 on songlq-PC with PID 30422 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-06-20 14:57:20.014 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-06-20 14:57:21.357 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-20 14:57:21.360 [main] INFO  o.a.c.c.StandardService - [log,173] [traceId= spanId=] - Starting service [Tomcat]
+2023-06-20 14:57:21.362 [main] INFO  o.a.c.c.StandardEngine - [log,173] [traceId= spanId=] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2023-06-20 14:57:21.437 [main] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId= spanId=] - Initializing Spring embedded WebApplicationContext
+2023-06-20 14:57:21.754 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-06-20 14:57:21.856 [cluster-ClusterId{value='64914dd1e98c5902995d062c', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,76] [traceId= spanId=] - Exception in monitor thread while connecting to server 10.200.14.188:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: 拒绝连接
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2023-06-20 14:57:22.487 [main] INFO  o.a.c.h.Http11NioProtocol - [log,173] [traceId= spanId=] - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-20 14:57:22.534 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 3.132 seconds (JVM running for 5.123)
+2023-06-20 14:57:30.824 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[.[/] - [log,173] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=bed5d79d4d558f75] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-20 14:57:30.846 [http-nio-8080-exec-1] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=bed5d79d4d558f75] - url:/gateway,header:
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
+cache-control				:max-age=0
+sec-ch-ua				:"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"
+sec-ch-ua-mobile				:?0
+sec-ch-ua-platform				:"Linux"
+upgrade-insecure-requests				:1
+user-agent				:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+accept				:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+sec-fetch-site				:none
+sec-fetch-mode				:navigate
+sec-fetch-user				:?1
+sec-fetch-dest				:document
+accept-encoding				:gzip, deflate, br
+accept-language				:zh-CN,zh;q=0.9,en;q=0.8
 
-2023-05-17 12:08:20.302 [http-nio-8080-exec-5] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 12:08:28.591 [http-nio-8080-exec-6] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:57:30.893 [http-nio-8080-exec-1] INFO  c.z.o.s.c.ServerController - [gateway,55] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=99d7f336eb25bffe] - this is tag
+2023-06-20 14:57:30.946 [http-nio-8080-exec-2] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=dac6ab88c3a5030e] - url:/resource,header:
+accept				:text/plain, application/json, application/*+json, */*
+traceparent				:00-c517a1fd97d4c00ddc483ab9d3dc9300-dfd7712c2e516a08-01
+user-agent				:Java/17.0.7
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
 
-2023-05-17 12:08:28.592 [http-nio-8080-exec-6] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 12:12:21.915 [http-nio-8080-exec-7] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:57:30.946 [http-nio-8080-exec-2] INFO  c.z.o.s.c.ServerController - [resource,72] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=e8b2ed31b7b42181] - this is resource
+2023-06-20 14:57:31.006 [http-nio-8080-exec-3] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=3af2a200e1f0d2fd] - url:/auth,header:
+accept				:text/plain, application/json, application/*+json, */*
+traceparent				:00-c517a1fd97d4c00ddc483ab9d3dc9300-a6af849f69ec12e4-01
+user-agent				:Java/17.0.7
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
 
-2023-05-17 12:12:21.916 [http-nio-8080-exec-7] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 12:24:59.715 [http-nio-8080-exec-8] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:57:31.007 [http-nio-8080-exec-3] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=fc154033ce63ec11] - this is auth
+2023-06-20 14:57:31.017 [http-nio-8080-exec-4] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=2da03936e1e2a5bb] - url:/billing,header:
+accept				:application/json, application/*+json
+traceparent				:00-c517a1fd97d4c00ddc483ab9d3dc9300-0b5355c378bf5d9c-01
+user-agent				:Java/17.0.7
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
 
-2023-05-17 12:24:59.716 [http-nio-8080-exec-8] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
-2023-05-17 12:33:06.661 [http-nio-8080-exec-9] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId= spanId=] - url:/auth,header:
+2023-06-20 14:57:31.022 [http-nio-8080-exec-4] INFO  c.z.o.s.c.ServerController - [billing,87] [traceId=c517a1fd97d4c00ddc483ab9d3dc9300 spanId=3120f13ae0b1fe8e] - this is method3,null
+2023-06-20 14:57:31.076 [http-nio-8080-exec-5] INFO  c.z.o.s.f.CorsFilter - [doFilter,32] [traceId=1d68ec7b00c9288904c9cfb45171fc25 spanId=cb9dbc599b9abd55] - url:/favicon.ico,header:
 host				:localhost:8080
-connection				:close
+connection				:keep-alive
+sec-ch-ua				:"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"
+sec-ch-ua-mobile				:?0
+user-agent				:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36
+sec-ch-ua-platform				:"Linux"
+accept				:image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+sec-fetch-site				:same-origin
+sec-fetch-mode				:no-cors
+sec-fetch-dest				:image
+referer				:http://localhost:8080/gateway
+accept-encoding				:gzip, deflate, br
+accept-language				:zh-CN,zh;q=0.9,en;q=0.8
+if-none-match				:W/"21630-1685726044000"
+if-modified-since				:Fri, 02 Jun 2023 17:14:04 GMT
 
-2023-05-17 12:33:06.662 [http-nio-8080-exec-9] INFO  c.z.o.s.c.ServerController - [auth,79] [traceId= spanId=] - this is auth
+2023-06-20 15:15:44.973 [main] INFO  c.z.o.s.ServerApplication - [logStarting,55] [traceId= spanId=] - Starting ServerApplication v0.0.1-SNAPSHOT using Java 17.0.7 on songlq-PC with PID 32146 (/home/songlq/github/nodepad/java/springboot-server/target/springboot-server.jar started by songlq in /home/songlq/github/nodepad/java/springboot-server)
+2023-06-20 15:15:44.975 [main] INFO  c.z.o.s.ServerApplication - [logStartupProfileInfo,639] [traceId= spanId=] - The following profiles are active: dev
+2023-06-20 15:15:46.052 [main] INFO  o.m.driver.cluster - [info,71] [traceId= spanId=] - Cluster created with settings {hosts=[10.200.14.188:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-06-20 15:15:46.104 [cluster-ClusterId{value='64915222d51d4e0640a7104f', description='null'}-10.200.14.188:27017] INFO  o.m.driver.cluster - [info,76] [traceId= spanId=] - Exception in monitor thread while connecting to server 10.200.14.188:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: 拒绝连接
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 4 common frames omitted
+2023-06-20 15:15:46.626 [main] INFO  c.z.o.s.ServerApplication - [logStarted,61] [traceId= spanId=] - Started ServerApplication in 2.099 seconds (JVM running for 2.637)

@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+api:
+  url: http://localhost:${server.port}
+spring:
+  application:
+    name: server
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  #data:
+    #mongodb:
+      #uri: mongodb://appAdmin:123456@10.200.14.188:27017/appdb
+      #uri: mongodb://mongoadmin:secret@10.200.14.188:27017/appdb
+      #uri: mongodb://root:aBui12dAA*H&iEB@dds-bp13df1628d0c2641994-pub.mongodb.rds.aliyuncs.com:3717,dds-bp13df1628d0c2642793-pub.mongodb.rds.aliyuncs.com:3717/admin
+  datasource:
+    username: root
+    password: 123456#..A
+    url: jdbc:mysql://49.232.153.84:3306/tmalldemodb?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+
+  schedulerx2:
+    endpoint: acm.aliyun.com
+    namespace: cbbe8718-9360-4386-96dc-d07489cbd135
+    groupId: boot
+    # 1.2.1及以上版本设置appKey
+    appKey: 5TkpVh8oHibKo75PgeeBBvg
+    task:
+      scheduling:
+        scheduler: schedulerx
+
+extra:
+  host: localhost
+client: false
