@@ -36,20 +36,32 @@ public class ResponseWrapper extends HttpServletResponseWrapper {
 
     @Override
     public PrintWriter getWriter() throws IOException {
-        useWrite = true;
         System.out.println("get write");
-        return writer;
+        if (getIsJson()){
+            useWrite = true;
+            return writer;
+        }
+        return super.getWriter();
     }
 
+    @Override
+    public ServletOutputStream getOutputStream() throws IOException {
+        System.out.println("getOutputStream");
+        if (getIsJson()){
+            useOutput = true;
+            return servletOutputStream;
+        }
+        return super.getOutputStream();
+    }
 
     public void flushBuffer() throws IOException {
         if (getIsJson()) {
             // Print the JSON response body
             System.out.println("JSON Response Body: " + charArrayWriter.toString());
+            PrintWriter responseWriter = super.getWriter();
+            responseWriter.write(charArrayWriter.toString());
+            responseWriter.flush();
         }
-        PrintWriter responseWriter = super.getWriter();
-        responseWriter.write(charArrayWriter.toString());
-        responseWriter.flush();
     }
 
     @Override
@@ -97,17 +109,6 @@ public class ResponseWrapper extends HttpServletResponseWrapper {
 
     public Boolean getUseOutput() {
         return useOutput;
-    }
-
-    @Override
-    public ServletOutputStream getOutputStream() throws IOException {
-        System.out.println("getOutputStream");
-        System.out.println("--- content type:"+getContentType());
-        if (getIsJson()){
-            useOutput = true;
-            return servletOutputStream;
-        }
-        return super.getOutputStream();
     }
 
     public void flushStreamBuffer() throws IOException {

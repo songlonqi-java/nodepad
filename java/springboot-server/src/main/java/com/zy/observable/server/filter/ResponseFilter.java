@@ -35,12 +35,12 @@ public class ResponseFilter implements Filter {
 
     HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 
-    System.out.println(">>" + response.getContentType());
+    System.out.println("处理请求前： " + response.getContentType());
     ResponseWrapper wrapper = new ResponseWrapper(httpServletResponse);
 
     filterChain.doFilter(request, wrapper);
 
-    System.out.println("filter 之后：>>" + response.getContentType());
+    System.out.println("处理 filter 之后：>>" + response.getContentType());
     System.out.println("wrapper filter 之后：>>" + wrapper.getContentType());
     /*wrapper.flushBuffer();
 
